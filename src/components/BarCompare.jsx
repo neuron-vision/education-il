@@ -3,7 +3,7 @@ export default function BarCompare({ rows, field, max, highlightLabel }) {
     <div className="dash-card">
       {rows.map((row) => {
         const value = row[field]
-        const isHighlight = row.country === highlightLabel
+        const isHighlight = row.country === highlightLabel || row.country?.includes(highlightLabel)
         return (
           <div className="gap-row" key={row.country} style={{ marginBottom: 10 }}>
             <span className="tag" style={{ width: 90, color: isHighlight ? '#eceef2' : undefined, fontWeight: isHighlight ? 600 : 400 }}>

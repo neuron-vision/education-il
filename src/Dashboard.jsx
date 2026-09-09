@@ -6,7 +6,7 @@ import BarCompare from './components/BarCompare.jsx'
 import CausesSection from './CausesSection.jsx'
 import StackedBar, { StackedLegend, SupervisionTable } from './components/StackedBar.jsx'
 import GapCard from './components/GapCard.jsx'
-import { PISA, TIMSS, EXPENDITURE, SOURCES } from './data/educationData.js'
+import { PISA, TIMSS, EXPENDITURE, SOURCES, RESEARCH_METRICS } from './data/educationData.js'
 import {
   MEITZAV_HERO,
   MEITZAV_DISTRIBUTION,
@@ -109,21 +109,21 @@ function TimssSection() {
     <section className="dash-section" id="timss">
       <div className="dash-section-head">
         <h2>TIMSS — מתמטיקה ומדעים, כיתה ח׳</h2>
-        <span className="dash-section-note">{TIMSS.years[0]} → {TIMSS.years[1]}</span>
+        <span className="dash-section-note">{TIMSS.years[0]} → {TIMSS.years[TIMSS.years.length - 1]} (25 שנה)</span>
       </div>
 
       <div className="stat-grid" style={{ marginBottom: 20 }}>
         <StatCard
-          value={TIMSS.israel.math[1]}
+          value={TIMSS.israel.math[TIMSS.years.length - 1]}
           direction="down"
           title="מתמטיקה, 2023"
-          note={`ירידה מ-${TIMSS.israel.math[0]} ב-2019`}
+          note={`ירידה מ-${TIMSS.israel.math[TIMSS.years.length - 2]} ב-2019`}
         />
         <StatCard
-          value={TIMSS.israel.science[1]}
+          value={TIMSS.israel.science[TIMSS.years.length - 1]}
           direction="down"
           title="מדעים, 2023"
-          note={`ירידה מ-${TIMSS.israel.science[0]} ב-2019`}
+          note={`ירידה מ-${TIMSS.israel.science[TIMSS.years.length - 2]} ב-2019`}
         />
         <StatCard
           value={`#${TIMSS.ranks.math2023}`}
@@ -139,15 +139,19 @@ function TimssSection() {
           yMin={440}
           yMax={540}
           series={[
-            { label: 'ישראל · מתמטיקה', values: TIMSS.israel.math, color: SUBJECT_COLORS.math },
-            { label: 'ישראל · מדעים', values: TIMSS.israel.science, color: SUBJECT_COLORS.science },
+            { label: 'ישראל · מתמטיקה', values: TIMSS.israel.math, color: SUBJECT_COLORS.math, flaggedYears: Object.keys(TIMSS.caveats).map(Number) },
+            { label: 'ישראל · מדעים', values: TIMSS.israel.science, color: SUBJECT_COLORS.science, flaggedYears: Object.keys(TIMSS.caveats).map(Number) },
             { label: 'מרכז הסולם הבינלאומי (500)', values: TIMSS.international.math, color: 'var(--world)' },
           ]}
         />
       </div>
 
+      <div className="dash-section-note" style={{ marginTop: 8, fontSize: 12, lineHeight: 1.6 }}>
+        ○ נקודות חלולות = שנים עם הסתייגות מדגם רשמית (NCES/IEA): ב-2003 המדגם לא עמד בהנחיות הבינלאומיות; ב-2007/2011/2015 כיסוי אוכלוסיית היעד הלאומית עמד על 77%–90% בלבד. הציונים מתפרסמים ומשמשים במגמות רשמיות חרף ההסתייגות. פירוט מלא ב-sources.md.
+      </div>
+
       <div className="callout" style={{ marginTop: 16 }}>
-        <b>שפל של 17 שנה:</b> ישראל צנחה ממקום 9 למקום 23 במתמטיקה, ולמקום 25 במדעים — הירידה החדה ביותר שנמדדה במבחן זה בישראל.
+        <b>שפל של 25 שנה:</b> ישראל צנחה ממקום 9 למקום 23 במתמטיקה, ולמקום 25 במדעים — הירידה החדה ביותר שנמדדה במבחן זה בישראל מאז 1999.
       </div>
 
       <div className="dash-section-head" style={{ marginTop: 28 }}>
@@ -313,6 +317,26 @@ function MoneyVsAchievementSection() {
   )
 }
 
+function ResearchFindingsSection() {
+  return (
+    <section className="dash-section" id="research-findings">
+      <div className="dash-section-head"><h2>מה אומרים הנתונים החדשים?</h2><span className="dash-section-note">OECD / מבקר המדינה / הכנסת</span></div>
+      <div className="research-grid">
+        <div><h3>מיומנות בסיסית ב-PISA 2022 (%)</h3><BarCompare rows={RESEARCH_METRICS.pisaProficiency} field="value" max={100} highlightLabel="ישראל" /></div>
+        <div><h3>הוצאה לתלמיד בדולר PPP, 2021</h3><BarCompare rows={RESEARCH_METRICS.spendingPerStudent} field="value" max={16000} highlightLabel="ישראל" /></div>
+        <div><h3>תלמידים למורה, 2022</h3><BarCompare rows={RESEARCH_METRICS.teacherRatios} field="value" max={18} highlightLabel="ישראל" /></div>
+      </div>
+      <ul className="bullets finding-list">
+        <li><b>הוצאה גבוהה מה-OECD כאחוז מהתמ"ג</b> (6.1% לעומת 4.9%), אך הוצאה לתלמיד נמוכה יותר בממוצע.</li>
+        <li><b>ב-PISA</b> ישראל מתחת לממוצע OECD במתמטיקה, קריאה ומדעים ברמת המיומנות הבסיסית; הפער החברתי-כלכלי גדול.</li>
+        <li><b>כוח אדם:</b> 692 שעות הוראה חוזיות בחטיבה בישראל לעומת 706 ב-OECD; יחס תלמידים-מורים גבוה יותר ביסודי ונמוך יותר בתיכון.</li>
+        <li><b>תקצוב דיפרנציאלי</b> הגדיל תוספות לפי מדד טיפוח, אך מבקר המדינה מצא פערי יישום ושקיפות והשפעה מוגבלת מעבר לפער שהיה קיים.</li>
+        <li><b>רפורמות:</b> אופק חדש (2008), עוז לתמורה (2011–12), תקצוב דיפרנציאלי (2014–15) ולמידה משמעותית (2014–17) שינו תשומות ותהליכים; אין להסיק מהן לבדן סיבתיות לתוצאות.</li>
+      </ul>
+    </section>
+  )
+}
+
 export default function Dashboard() {
   return (
     <div className="dash-root">
@@ -339,6 +363,7 @@ export default function Dashboard() {
         <MeitzavSection />
         <ExpenditureSection />
         <MoneyVsAchievementSection />
+        <ResearchFindingsSection />
         <CausesSection />
 
         <footer className="dash-footer">

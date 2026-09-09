@@ -75,7 +75,23 @@
 |---|---|---|
 | [Wikipedia - Trends in International Mathematics and Science Study](https://en.wikipedia.org/wiki/Trends_in_International_Mathematics_and_Science_Study) | - | ציוני 2023 למתמטיקה/מדעים: סינגפור, דרום קוריאה, פינלנד, ארה"ב, ישראל |
 
-הערה: TIMSS 2011/2015 עבור ישראל וממוצעי OECD ל-PISA לשנים 2006-2018 נבדקו במחקר נוסף אך נמצאו לא-עקביים בין מקורות (Statista, NCES, דוחות OECD שונים) - **לא פורסמו בדשבורד** עד לאימות מול המקור הרשמי (oecd.org, timssandpirls.bc.edu).
+הערה (היסטורית, 2024): TIMSS 2011/2015 עבור ישראל וממוצעי OECD ל-PISA לשנים 2006-2018 נבדקו במחקר נוסף אך נמצאו לא-עקביים בין מקורות (Statista, NCES, דוחות OECD שונים) - לא פורסמו אז בדשבורד.
+
+**עדכון 9.9.2026:** בוצע מחקר ממוקד להשלמת 20+ שנות נתוני TIMSS לישראל (כיתה ח׳), עם אימות ישיר מול טבלאות NCES הרשמיות (מקור משני מהימן ל-IEA). הנתונים פורסמו כעת בדשבורד:
+
+| שנה | מתמטיקה | מדעים | הסתייגות |
+|---:|---:|---:|---|
+| 1999 | 468 | 466 | ללא |
+| 2003 | 496 | 488 | לא עמדה בדרישות המדגם/הנחיות הבינלאומיות |
+| 2007 | 463 | 468 | כיסוי אוכלוסיית יעד לאומית 77%-90% בלבד |
+| 2011 | 516 | 516 | כיסוי אוכלוסיית יעד לאומית 77%-90% בלבד |
+| 2015 | 511 | 507 | כיסוי אוכלוסיית יעד לאומית 77%-90% בלבד |
+| 2019 | 519 | 513 | ללא (מאומת קודם) |
+| 2023 | 487 | 481 | ללא (מאומת קודם) |
+
+מקורות: [NCES TIMSS 1999 Results](https://nces.ed.gov/timss/results99_1.asp), [NCES TIMSS 2003 Tables](https://nces.ed.gov/timss/timss03tables.asp), [NCES TIMSS 2007 Table 1](https://nces.ed.gov/timss/table07_1.asp) + [Table 3](https://nces.ed.gov/timss/table07_3.asp), [NCES TIMSS 2011 Table 3](https://nces.ed.gov/timss/table11_3.asp) + [Table 5](https://nces.ed.gov/timss/table11_5.asp), [NCES TIMSS 2015 Table 2](https://nces.ed.gov/timss/timss2015/timss2015_table02.asp) + [Table 24](https://nces.ed.gov/timss/timss2015/timss2015_table24.asp).
+
+הערת מהימנות: הנתונים מקור משני (NCES, לא ישירות מ-timssandpirls.bc.edu/IEA), אך אומתו ישירות מהעמודים החיים של NCES כולל טקסט ההסתייגות המדויק לכל שנה. ישראל השתתפה בכל המחזורים 1999-2023 ברמת כיתה ח׳ (לא כיתה ד׳ בלבד באף מחזור). ההסתייגויות של 2007/2011/2015 (כיסוי אוכלוסייה 77%-90%) שונות ומתונות יותר מזו של 2003 (אי-עמידה בהנחיות מדגם) — כל השנים מתפרסמות ומשמשות במגמות הרשמיות של NCES/IEA חרף ההסתייגות.
 
 ---
 

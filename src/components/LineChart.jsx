@@ -82,11 +82,21 @@ export default function LineChart({ years, series, yMin, yMax, unit = '' }) {
                 strokeLinecap="round"
                 strokeDasharray={s.dashed ? '6 4' : undefined}
               />
-              {s.values.map((v, i) =>
-                v == null ? null : (
-                  <circle key={i} cx={scaleX(i, years.length)} cy={scaleY(v, min, max)} r="3.5" fill={s.color} />
+              {s.values.map((v, i) => {
+                if (v == null) return null
+                const flagged = s.flaggedYears?.includes(years[i])
+                return (
+                  <circle
+                    key={i}
+                    cx={scaleX(i, years.length)}
+                    cy={scaleY(v, min, max)}
+                    r={flagged ? 4.5 : 3.5}
+                    fill={flagged ? 'var(--bg, #12151c)' : s.color}
+                    stroke={s.color}
+                    strokeWidth={flagged ? 2 : 0}
+                  />
                 )
-              )}
+              })}
             </g>
           )
         })}
