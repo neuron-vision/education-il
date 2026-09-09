@@ -1,0 +1,112 @@
+.a11y-root { position: fixed; bottom: 20px; right: 20px; z-index: 1000; font-family: inherit; }
+.a11y-bubble {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: #3d9668;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.a11y-bubble svg { width: 28px; height: 28px; }
+.a11y-panel {
+  position: fixed;
+  bottom: 84px;
+  right: 20px;
+  width: 240px;
+  background: var(--surface, #1b1f27);
+  color: var(--text, #eceef2);
+  border: 1px solid var(--rule, #2a2f3a);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
+  font-size: 13px;
+}
+.a11y-panel-title { font-weight: 700; font-size: 14px; }
+.a11y-panel-subtitle { font-weight: 600; font-size: 12px; color: var(--text-dim, #9ca3af); }
+.a11y-divider { height: 1px; background: var(--rule, #2a2f3a); margin: 2px 0; }
+.a11y-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.a11y-btn-group { display: flex; gap: 4px; }
+.a11y-btn-group button {
+  background: var(--surface-alt, #20242d);
+  border: 1px solid var(--rule, #2a2f3a);
+  color: inherit;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.a11y-toggle { cursor: pointer; }
+.a11y-toggle input { width: 18px; height: 18px; cursor: pointer; }
+.a11y-reset {
+  background: none;
+  border: 1px solid var(--rule, #2a2f3a);
+  color: inherit;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.a11y-statement-link { color: #5b9bc8; font-size: 12px; text-align: center; text-decoration: none; }
+.a11y-statement-link:hover { text-decoration: underline; }
+
+/* High-contrast mode: pure black/white, stronger borders, no low-contrast grays */
+html.a11y-contrast body { background: #000 !important; color: #fff !important; }
+html.a11y-contrast .dash-root,
+html.a11y-contrast .dash-card,
+html.a11y-contrast .stat-card,
+html.a11y-contrast .gap-card,
+html.a11y-contrast .cause-stat {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+html.a11y-contrast * { color: #fff !important; }
+html.a11y-contrast a { color: #ffe600 !important; }
+html.a11y-contrast .tab-btn.active,
+html.a11y-contrast .a11y-bubble,
+html.a11y-contrast .ac-bubble {
+  background: #ffe600 !important;
+  color: #000 !important;
+}
+
+html.a11y-underline a { text-decoration: underline !important; }
+
+/* Readable font: a rounded, high-legibility sans-serif stack that avoids
+   easily-confused letterforms (no true OpenDyslexic without a font file, but
+   Verdana/Arial-family fonts are the standard low-cost stand-in). */
+html.a11y-readable-font body,
+html.a11y-readable-font .dash-root,
+html.a11y-readable-font .dash-root h1,
+html.a11y-readable-font .dash-root h2,
+html.a11y-readable-font .dash-root h3 {
+  font-family: Verdana, 'Trebuchet MS', Arial, sans-serif !important;
+}
+
+html.a11y-spacing .dash-root,
+html.a11y-spacing .dash-root p,
+html.a11y-spacing .dash-root li {
+  line-height: 2 !important;
+  letter-spacing: 0.03em !important;
+  word-spacing: 0.15em !important;
+}
+
+.a11y-reading-guide {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: rgba(255, 230, 0, 0.18);
+  border-top: 2px solid #ffe600;
+  border-bottom: 2px solid #ffe600;
+  pointer-events: none;
+  z-index: 1400;
+}

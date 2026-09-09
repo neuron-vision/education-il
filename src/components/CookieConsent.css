@@ -1,0 +1,32 @@
+.cc-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+  background: #1b1f27;
+  color: #eceef2;
+  border-top: 1px solid #2a2f3a;
+  padding: 14px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 13px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, .4);
+}
+.cc-banner p { margin: 0; max-width: 720px; line-height: 1.6; }
+.cc-banner a { color: #5b9bc8; margin-inline-start: 4px; }
+.cc-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.cc-accept {
+  background: #3d7ea6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.cc-accept:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }

@@ -1,0 +1,18 @@
+.admin-page { min-height: 100vh; padding: 78px 20px 60px; max-width: 980px; margin: 0 auto; background: #12151a; color: #eceef2; direction: rtl; font-family: system-ui, sans-serif; }
+.admin-page h1, .admin-page h2 { font-family: 'Frank Ruhl Libre', serif; }
+.admin-page h1 { font-size: 32px; margin: 0 0 24px; }
+.admin-page h2 { font-size: 20px; margin: 0 0 16px; }
+.admin-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 20px; }
+.admin-stats div, .admin-card { background: #1b1f27; border: 1px solid #2a2f3a; border-radius: 6px; padding: 18px; }
+.admin-stats b { display: block; font-size: 34px; color: #3d9668; }
+.admin-stats span { color: #9ca3af; font-size: 13px; }
+.admin-card { margin-bottom: 18px; overflow-x: auto; }
+.admin-card table { width: 100%; border-collapse: collapse; text-align: right; }
+.admin-card th, .admin-card td { padding: 10px; border-bottom: 1px solid #2a2f3a; }
+.admin-card th { color: #9ca3af; font-size: 12px; }
+.admin-card button { color: #eceef2; background: #3d7ea6; border: 0; border-radius: 4px; padding: 7px 11px; cursor: pointer; }
+.session-row { display: block; width: 100%; margin-bottom: 8px; text-align: right; background: #20242d !important; border: 1px solid #2a2f3a !important; }
+.conversation { white-space: pre-wrap; line-height: 1.6; }
+.conversation p { padding: 10px; margin: 0 0 8px; background: #20242d; border-radius: 4px; }
+.admin-error { color: #d64545; }
+@media (max-width: 600px) { .admin-stats { grid-template-columns: 1fr; } }
