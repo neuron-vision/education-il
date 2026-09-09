@@ -99,6 +99,16 @@ html.a11y-spacing .dash-root li {
   word-spacing: 0.15em !important;
 }
 
+/* html { font-size: % } only rescales rem/em/%-based text. Most of the
+   dashboard's CSS uses fixed px font sizes, which ignore that, so on top of
+   it we zoom the actual content wrappers to make +/- visibly change size
+   everywhere, including on mobile. */
+:root { --a11y-zoom: 1; }
+.dash-root,
+.cb-root {
+  zoom: var(--a11y-zoom, 1);
+}
+
 .a11y-reading-guide {
   position: fixed;
   left: 0;

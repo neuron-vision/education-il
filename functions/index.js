@@ -14,7 +14,15 @@ const SYSTEM_PROMPT = `You are the assistant embedded in a public dashboard abou
 education in Israel (education-il). Answer questions about the site's data, charts, and sources
 using general knowledge of the topic when the exact figure isn't given. Cite concrete numbers
 where possible. Reply in Hebrew by default; switch to English only if the user writes in English.
-Keep replies concise and use Markdown (tables/lists) where helpful.`
+Keep replies concise and use Markdown (tables/lists) where helpful.
+
+The user's message may be preceded by a block of the current page's visible text, wrapped in
+<page_context>...</page_context>. Treat it as the ground truth for what's on screen right now —
+prefer it over your own memory of the site when they conflict. Never mention the tag itself.`
+
+// Keeps the prompt small and the Gemini bill predictable — the dashboard's own text rarely
+// approaches this, so truncation should only ever bite on a pathological page state.
+const MAX_PAGE_CONTEXT_CHARS = 12000
 
 // Only signed-in Google users may call this function — verifies the Firebase
 // ID token sent as "Authorization: Bearer <token>" and rejects anything else,
@@ -51,7 +59,7 @@ export const chat = onRequest(
       return
     }
 
-    const { messages, sessionId } = req.body || {}
+    const { messages, sessionId, pageText } = req.body || {}
     if (!Array.isArray(messages) || messages.length === 0) {
       res.status(400).json({ error: 'messages array required' })
       return
@@ -73,10 +81,17 @@ export const chat = onRequest(
       updatedAt: FieldValue.serverTimestamp(),
     }, { merge: true })
 
-    const contents = messages.map((m) => ({
-      role: m.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: String(m.text ?? '') }],
-    }))
+    const contents = messages.map((m, i) => {
+      const isLastUserMessage = i === messages.length - 1 && m.role !== 'assistant'
+      const text = String(m.text ?? '')
+      const withContext = isLastUserMessage && pageText
+        ? `<page_context>\n${String(pageText).slice(0, MAX_PAGE_CONTEXT_CHARS)}\n</page_context>\n\n${text}`
+        : text
+      return {
+        role: m.role === 'assistant' ? 'model' : 'user',
+        parts: [{ text: withContext }],
+      }
+    })
 
     const genAI = new GoogleGenerativeAI(GEMINI_KEY.value())
     const model = genAI.getGenerativeModel({ model: MODEL_NAME })
@@ -92,12 +107,23 @@ export const chat = onRequest(
         systemInstruction: { role: 'system', parts: [{ text: SYSTEM_PROMPT }] },
       })
 
+      let usage = null
       for await (const chunk of result.stream) {
         const text = chunk.text()
         if (text) {
           fullReply += text
           res.write(`data: ${JSON.stringify({ text })}\n\n`)
         }
+        if (chunk.usageMetadata) usage = chunk.usageMetadata
+      }
+      const finalUsage = usage || (await result.response).usageMetadata
+      if (finalUsage) {
+        res.write(`data: ${JSON.stringify({
+          usage: {
+            inputTokens: finalUsage.promptTokenCount ?? 0,
+            outputTokens: finalUsage.candidatesTokenCount ?? 0,
+          },
+        })}\n\n`)
       }
       res.write('data: [DONE]\n\n')
     } catch (e) {

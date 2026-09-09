@@ -1,0 +1,271 @@
+                                                                                                        1
+
+
+
+
+  Israel
+
+This country note provides an overview of key characteristics of the education system in Israel based on
+Education at a Glance 2024. In line with the thematic focus of Education at a Glance 2024, it highlights
+issues of equity in education. Data in this note are provided for the latest available year as indicated in
+Education at a Glance 2024.
+
+
+The output of educational institutions and the impact of learning
+
+   •   Adults without upper secondary qualification are at considerable risk of poor social and labour-
+       market outcomes throughout their lives. Reducing the share of young adults without an upper
+       secondary qualification has been a priority in many countries and their share has decreased
+       between 2016 and 2023 in 28 out of 35 OECD member countries. However, this is not the case in
+       Israel. Their share of 25-34 year-olds without upper secondary educational attainment increased
+       by 1 percentage point between 2016 and 2023. At 9%, it is 5 percentage points below the OECD
+       average in 2023 (Figure 1).
+   •   The difficult labour-market situation faced by workers without an upper secondary qualification is
+       reflected in employment rates among 25-34 year-olds. In Israel, 56% of 25-34 year-olds without
+       an upper secondary qualification are employed, compared to 69% of those with an upper
+       secondary or post-secondary non-tertiary qualification. The corresponding OECD averages are
+       61% and 79%, respectively. Moreover, workers without an upper secondary qualification are at risk
+       of earning very low wages in most OECD countries. In Israel, 27% of 25-64 year-olds with below
+       upper secondary educational attainment earn at or below half the median income compared to
+       21% of workers with upper secondary or post-secondary non-tertiary educational attainment and
+       13% of workers with a tertiary qualification. Across the OECD, the respective shares are 28%, 17%
+       and 10%.
+   •   Strong labour markets and increasing participation in education have led to a decline in the share
+       of 18-24 year-olds who are neither in employment nor in education or training (NEET) in most
+       OECD member countries. Across the OECD, the average NEET rate decreased from 15.8% to
+       13.8% between 2016 and 2023. In Israel, the share of NEETs decreased from 17.4% to 16.8%.
+   •   By almost all available measures, girls and women have better educational outcomes than boys
+       and men, and in many cases the gap is widening. This is reflected in gender gaps in educational
+       attainment. In all OECD member countries, women aged 25-34 are as likely or more likely than
+       their male peers to have a tertiary qualification (54% compared to 41% on average across OECD
+       countries). With a tertiary educational attainment rate of 56% for women and 36% for men, the gap
+       is much wider than the OECD average in Israel.
+   •   Although girls and women clearly outperform boys and men in education, the picture is reversed
+       when they enter the labour market; the key measures of labour-market outcomes are generally
+       worse for women than for men. Women aged 25-34 are less likely to be employed than men, with
+                                                                                                                           2
+         the gap typically widest for those with below upper secondary educational attainment and
+         narrowest for those with tertiary attainment. In Israel, only 41% of young women with educational
+         attainment below upper secondary educational level are employed, while the corresponding share
+         for young men is 66% (the corresponding OECD averages are 47% and 72%). In contrast, 88% of
+         young women with a tertiary qualification are employed, while the corresponding share for young
+         men is 90% (the corresponding OECD averages are 84% and 90%). However, tertiary attainment
+         does not help to reduce the wage gap between men and women. Across the OECD, young women
+         with a tertiary qualification earn on average 83% of the wage of their male peers, while the
+         corresponding fraction is 69% in Israel. Among those with upper secondary or post-secondary non-
+         tertiary attainment, young women earn on average 84% of the wage of their male peers across the
+         OECD and 73% in Israel.
+
+
+Figure 1. Trends in the share of 25-34 year-olds with below upper secondary educational
+attainment (2016 and 2023)
+In per cent
+
+
+
+
+1. The OECD average is derived from the unweighted mean of all countries with available and comparable data for both years.
+Countries are ranked in descending order of the share of 25-34 year-olds with below upper secondary attainment in 2023.
+Source: OECD (2024), Table A1.2. For more information see Education at a Glance 2024 Sources, Methodologies and Technical Notes
+(https://doi.org/10.1787/e7d20315-en).
+                                                                                                        3
+Access to education, participation and progression
+
+  •   Childcare and parental leave policies vary considerably between countries. Of particular
+      importance for low-income families is the so-called childcare gap, the period between the end of
+      paid parental leave and the start of free early childhood education and care or compulsory
+      education. In eight OECD countries, there is no childcare gap as free early childhood education or
+      compulsory education starts immediately following the end of paid parental leave. In contrast, Israel
+      has a childcare gap of 3 years between the end of paid parental leave and the start of free
+      compulsory education.
+  •   Early childhood education can help to reduce the developmental gaps that put some children at a
+      disadvantage when they enrol in primary school. In most OECD countries, the large majority of
+      children are enrolled in early childhood education one year before the start of primary education.
+      In Israel, 97% of children in this age group are enrolled, compared with an OECD average of 96%.
+  •   Although most children and youths participate in education in the years before and after
+      compulsory education, not all do so. In order to increase enrolment in the early years or among
+      youths, twelve OECD member and accession countries have increased the duration of compulsory
+      education over the past decade. Israel does not belong to this group. Compulsory education in
+      Israel lasts from the age of 3 to 17 for a total of 14 years, which is above the OECD average of 11
+      years (Figure 2).
+                                                                                                                                4
+Figure 2. Duration of compulsory education (2022)
+In years
+
+
+
+
+Note: The year in parentheses indicates when policy changes were made to the duration of compulsory education. In addition, extended
+ECEC/extended upper secondary refers to the extension in the duration of the relevant level since 2013.
+1. There are other compulsory activities to complete by the end of compulsory education (see Table B2.1).
+2. Starting age, ending age, and duration of compulsory education may vary at sub-national level.
+Countries are ranked in descending order of the duration of compulsory education.
+Source: OECD (2024), Table B2.1. For more information see Education at a Glance 2024 Sources, Methodologies and Technical Notes
+(https://doi.org/10.1787/e7d20315-en).
+
+
+    •      Grade repetition is common in many countries to give students more time to master the content of
+           a grade, although its effectiveness is debated. In Israel, 0.8% of primary, 1.1% of lower secondary
+           and 3.2% of general upper secondary students repeat a grade in their current level of education,
+           while the OECD average is 1.5% at primary, 2.2% at lower secondary and 3.2% at general upper
+           secondary level.
+    •      The likelihood of tertiary students successfully completing their studies depends on their family
+           background. In Israel, 83% of students with at least one parent with tertiary attainment successfully
+           completed their tertiary studies within three years of the theoretical end of the programme, while
+           only 75% of students whose parents had less than upper secondary education did so.
+    •      Women are significantly over-represented in tertiary education and the gap is widening in most
+           countries. In Israel, 58% of new entrants to tertiary education are women, compared with an OECD
+           average of 56%. As women are also more likely than men to complete tertiary education, the gap
+           is even greater among graduates (see Education at a Glance 2022). However, there are large
+                                                                                                         5
+        differences between fields of study in all OECD countries. In Israel, 19% of women entering tertiary
+        education were studying science, technology, engineering and mathematics fields, while only 9%
+        of men were entering education-related fields.
+    •   Across the OECD, 63% of students who graduated with a bachelor's degree did so from public
+        institutions. However, private education is slowly becoming more common across all levels of
+        tertiary education and the share of graduates from private institutions has grown by 3 percentage
+        points between 2013 and 2022. In Israel, the share of bachelor's graduates from private institutions
+        decreased from 89% to 81%.
+
+
+
+
+Financial resources invested in education
+
+    •   The average annual expenditure per student from primary to tertiary education (including R&D) in
+        Israel is USD 11 111 compared to an average of USD 14 209 in OECD countries. In most
+        countries, expenditure increases by level of education. In Israel, spending per student is
+        USD 11 327 in primary education, USD 10 464 in secondary education and USD 12 239 in tertiary
+        education (Figure 3).1
+    •   Israel spends 6.1% of its gross domestic product (GDP) on educational institutions at primary to
+        tertiary levels (including R&D). This is more than the OECD average of 4.9% of GDP. On average
+        across the OECD, the share of GDP dedicated to educational institutions (from primary to tertiary
+        levels) has been broadly stable, with 4.9% in 2015 and 2021. However, trends vary considerably
+        between countries. Israel is among the countries where expenditure as a share of GDP remained
+        roughly constant at 6.1%.
+    •   Early childhood education has received much attention in recent years because of its importance,
+        especially for children from disadvantaged families. In Israel, public investment in early childhood
+        education relative to GDP has increased by 8% between 2015 and 2021. Across the OECD, it has
+        increased on average by 9% over this period.
+
+
+
+
+1
+ All expenditure figures in this note are expressed in USD calculated based on purchasing power parity
+(PPP) exchange rates.
+                                                                                                                           6
+Figure 3. Total expenditure per full-time equivalent student in primary, secondary and tertiary
+education (2021)
+In equivalent USD converted using PPPs, expenditure on educational institutions
+
+
+
+
+1. Primary education includes pre-primary and lower secondary programmes.
+Countries are ranked in descending order of the total expenditure per full-time equivalent student in primary education.
+Source: OECD (2024), Table C1.1. For more information see Education at a Glance 2024 Sources, Methodologies and Technical Notes
+(https://doi.org/10.1787/e7d20315-en).
+
+
+    •    Across the OECD, public authorities are responsible for the vast majority of spending on education,
+         particularly at compulsory levels. In Israel, 96% of total expenditure on primary institutions comes
+         from public sources, which is above the OECD average of 93%. Private expenditure makes up a
+         greater share in pre-primary and tertiary education in many countries. In Israel, the share of public
+         expenditure on pre-primary education is 92%, above the OECD average of 86%, while for tertiary
+         education it is 57%, compared to an OECD average of 68%.
+    •    How private institutions are funded varies considerably across countries, with some fully or largely
+         government funded, while others receive little or no public funding. In Israel, government sources
+         spend USD 13 276 per full-time equivalent student in public primary institutions, while the figure is
+         USD 3 218 per full-time equivalent student in private ones (the OECD averages are USD 11 914
+         for public primary institutions and USD 7 867 for private ones).
+    •    Tuition fees are an important component of private expenditure on tertiary education, but they vary
+         considerably across countries. In Israel, with USD 3 088 per year for national students in bachelor’s
+         programmes, they are in the middle of the range among OECD countries for which data are
+         available.
+                                                                                                                                  7
+Teachers, the learning environment and the organisation of schools
+
+    •    In 2023, actual salaries of lower secondary teachers in Israel reached USD 54 430 (compared to
+         USD 56 462 on average across OECD countries), 74% higher than the minimum statutory salary
+         (starting salary with minimum qualifications) of USD 31 201. The difference between actual salaries
+         and the minimum statutory salaries results partly from the structure of the teacher population (by
+         qualification and experience) as this affects the level of statutory salaries, but also from the amount
+         of additional work-related payments (bonuses and allowances for performing certain tasks)
+         (Figure 4).
+
+
+Figure 4. Lower secondary teachers’ average actual salaries compared to the statutory minimum
+and maximum salaries (2023)
+Annual salaries of teachers in public institutions, in equivalent USD converted using PPPs for private consumption
+
+
+
+
+Note: Actual salaries include bonuses and allowances.
+1. Actual salaries for minimum and maximum statutory salaries.
+2. Year of reference for actual salaries differs from 2023. Refer to the source table for more information.
+Countries and other participants are ranked in descending order of the starting salaries for teachers with the minimum qualifications.
+Source: OECD (2024), Table D3.3 and the OECD Data Explorer, https://data-explorer.oecd.org/. For more information see Education at a
+Glance 2024 Sources, Methodologies and Technical Notes (https://doi.org/10.1787/e7d20315-en).
+                                                                                                                                     8
+     •    The work of teachers consists of a variety of tasks including teaching, but also preparing lessons,
+          grading assignments and communicating with parents. The number of hours that teachers are
+          contractually obliged to teach varies greatly across countries. In Israel, teachers at lower secondary
+          level have to teach 692 hours annually. This is similar the OECD average of 706 hours per year.
+     •    Student-teacher ratios vary between countries and between levels of education. On average
+          across the OECD, there are 14 students per teacher in primary education, 13 students in lower
+          secondary education and 13 students in upper secondary education. In Israel, the corresponding
+          numbers are 15 in primary education, 13 in lower secondary education and 11 in upper secondary
+          education. While lower student teacher ratios allow teachers to focus more on the needs of the
+          individual, they require higher overall spending on teacher salaries and have to be weighed against
+          alternative spending priorities.
+     •    Between 2013 and 2022, the average age of teachers has increased across the OECD. In lower
+          secondary education, 36% of teachers are 50 years or older, compared to 35% in 2013. Israel has
+          fewer teachers aged 50 or older, with only 31% of teachers being in this age category, up from
+          28% in 2013.
+
+
+More information
+
+For more information on Education at a Glance 2024 and to access the full set of indicators, see:
+https://doi.org/10.1787/c00cad36-en.
+For more information on the methodology used during the data collection for each indicator, the references
+to the sources and the specific notes for each country, see Education at a Glance 2024: Sources,
+Methodologies and Technical Notes (https://doi.org/10.1787/e7d20315-en).
+For general information on the methodology, please refer to the OECD Handbook for Internationally
+Comparative Education Statistics 2018 (https://doi.org/10.1787/9789264304444-en).
+Updated data can be found on line at http://data-explorer.oecd.org/s/5q and by following the
+StatLinks 2 in the publication.
+Explore, compare and visualise                       more      data      and     analysis       using     the    Education       GPS:
+https://gpseducation.oecd.org/.
+Questions can be directed to the Education at a Glance team at the OECD Directorate for Education and
+Skills: EDU.EAG@oecd.org.
+
+
+This work is published under the responsibility of the Secretary-General of the OECD. The opinions expressed and arguments
+employed herein do not necessarily reflect the official views of the Member countries of the OECD.
+
+This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty over any territory,
+to the delimitation of international frontiers and boundaries and to the name of any territory, city or area.
+
+The statistical data for Israel are supplied by and under the responsibility of the relevant Israeli authorities. The use of such data by
+the OECD is without prejudice to the status of the Golan Heights, East Jerusalem and Israeli settlements in the West Bank under the
+terms of international law.
+                                                                                                                                  9
+              Attribution 4.0 International (CC BY 4.0)
+This work is made available under the Creative Commons Attribution 4.0 International licence. By using this work, you accept to be
+bound by the terms of this licence (https://creativecommons.org/licenses/by/4.0/).
+Attribution – you must cite the work.
+Translations – you must cite the original work, identify changes to the original and add the following text: In the event of any
+discrepancy between the original work and the translation, only the text of original work should be considered valid.
+Adaptations – you must cite the original work and add the following text: This is an adaptation of an original work by the OECD. The
+opinions expressed and arguments employed in this adaptation should not be reported as representing the official views of the OECD
+or of its Member countries.
+Third-party material – the licence does not apply to third-party material in the work. If using such material, you are responsible for
+obtaining permission from the third party and for any claims of infringement.
+You must not use the OECD logo, visual identity or cover image without express permission or suggest the OECD endorses your
+use of the work.
+Any dispute arising under this licence shall be settled by arbitration in accordance with the Permanent Court of Arbitration (PCA)
+Arbitration Rules 2012. The seat of arbitration shall be Paris (France). The number of arbitrators shall be one.
+

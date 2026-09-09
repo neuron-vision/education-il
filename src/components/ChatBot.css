@@ -22,6 +22,7 @@
 .cb-gate button { background: #3d7ea6; color: #fff; border: none; border-radius: 8px; padding: 8px 12px; cursor: pointer; font-size: 13px; }
 .cb-signout { background: none; border: none; border-top: 1px solid var(--rule); color: var(--text-dim); font-size: 11px; padding: 6px; cursor: pointer; }
 .cb-signout:hover { color: var(--text); }
+.cb-usage { padding: 4px 12px; font-size: 10px; color: var(--text-dim); background: var(--surface-alt); border-bottom: 1px solid var(--rule); text-align: center; direction: ltr; }
 .cb-admin-badge {
   display: inline-block;
   margin-inline-start: 5px;

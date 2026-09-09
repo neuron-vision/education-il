@@ -1,0 +1,852 @@
+CBS, STATISTICAL ABSTRACT OF ISRAEL ‫ שנתון סטטיסטי לישראל‬,‫למ''ס‬
+
+                                11. NATIONAL ACCOUNTS
+  Contents of Table
+EXPLANATIONS AND DEFINITIONS...................................................... 2
+    SOURCES OF DATA AND METHODS OF COMPUTATION ............ 8
+    NATIONAL EXPENDITURE .............................................................. 8
+  NATIONAL INCOME ........................................................................... 11
+  REVISED ESTIMATES ....................................................................... 11
+    DEFINITIONS OF WAGES, COMPENSATION AND LABOUR COST
+    ......................................................................................................... 14
+  INPUT-OUTPUT ................................................................................. 15
+  SUPPLY TABLE ................................................................................. 15
+    SOURCES OF THE DATA .............................................................. 16
+  INTERNATIONAL COMPARISONS.................................................... 16
+  PURCHASING POWER PARITY ........................................................ 16
+    Explanations and Definitions............................................................ 16
+    SOURCES ....................................................................................... 17
+  SELECTED PUBLICATIONS .............................................................. 17
+    SPECIAL PUBLICATIONS .............................................................. 17
+    JUBILEE PUBLICATIONS (on the occasion of Israel’s 50th year) .. 17
+
+
+
+
+NATIONAL ACCOUNTS                                   (1)                                  ‫חשבונות לאומיים‬
+                       EXPLANATIONS AND DEFINITIONS
+National Accounts for 1950 to 1995 were compiled according to the
+recommendations of the UN Statistical Office in 1968 (United Nations: A
+System of National Accounts, Studies in Methods, Series F, No. 2, New York,
+1968). The national accounts for 1995 to 2018 are based on the SNA2008
+system of national accounts prepared by five international organizations: UN,
+IMF, World Bank, OECD and Eurostat (System of National Accounts, 2008,
+Commission of the European Communities, International Monetary Fund,
+Organization for Economic Co-operation and Development, United Nations,
+World Bank, New York, 2009).
+Gross domestic product: The sum of the gross values added of all resident
+producers (output less intermediate consumption), plus net taxes (taxes less
+subsidies on products) not already included in the value of output. GDP is
+also derived as the sum of expenditure on final consumption plus gross
+capital formation plus exports less imports. In addition GDP is derived as the
+sum of primary incomes distributed by resident producer units: compensation
+of employees plus gross operating surplus plus gross mixed incomes plus net
+taxes less subsidies on both production and imports.
+Until 1995, the definition of gross domestic product was different, and it
+excluded net taxes on imports and included revenue components received for
+the exports.
+Gross domestic product, at market prices, excluding net taxes on
+imports: The sum of the gross values added of all resident producers at
+producers` prices, plus all non-deductible VAT (or similar taxes), but excluding
+net taxes on imports. GDP excluding net taxes on imports is not subject to
+fluctuations due to changes in the amount and structure of taxation of foreign
+trade. Therefore, it is preferable to analyzing economic changes in the GDP
+including net taxes on imports.
+Output: The value of goods and services produced by an establishment,
+excluding the value of any goods and services used in an activity for which
+the establishment does not assume the risk of using the products in
+production, and excluding the value of goods and services consumed by the
+same establishment (except for goods and services used for fixed capital
+formation or changes in inventories or own final consumption). In service
+industries, output equals the total compensation received for services that
+have been provided. The term “output” is distinguished from the term
+“revenue”, which is used extensively in financial reports from the business
+sector. Revenue can include income from sale of goods that were not
+produced by the reporting establishment.
+GDP of the business sector: The GDP of the whole economy, except the
+GDP of the general government sector, the GDP of non-profit institutions
+serving households, and the GDP of the industry of housing services of
+owner-occupied dwellings.
+Private consumption expenditure: The aggregate of consumption
+expenditure of Israeli households and the consumption expenditure of non-
+profit institutions serving households, where the major part of their
+expenditure is not financed by the government.
+Consumption expenditure of Israeli households: Expenditure of Israeli
+resident households for goods and services, including durable goods but
+excluding purchase of dwellings, in Israel and abroad.
+
+    NATIONAL ACCOUNTS                   (2)                     ‫חשבונות לאומיים‬
+Consumption expenditure of households in the domestic market: Due to
+the lack of detailed current statistics on the consumption of Israelis, the
+breakdown of consumption into components relates to the combined domestic
+expenditure of all households (both households of Israelis and of foreign
+residents) in the domestic market.
+General government final consumption expenditure: Expenditure,
+including expenditure whose value must be estimated indirectly, incurred by
+general government on both individual consumption goods and services and
+collective consumption services.
+General government final consumption expenditure also equals the value of
+its intermediate consumption of goods and services, compensation of
+employees, taxes on production (including taxes on wages and employers`
+tax) and consumption of fixed capital.
+Actual individual consumption (formerly: individual consumption
+expenditure): The total value of household final consumption expenditure,
+non-profit institutions serving households' final consumption expenditure and
+government expenditure on individual consumption goods and services.
+A good or service for individual consumption is one that is acquired by a
+household and used to satisfy the needs of members of that household.
+Collective government final consumption expenditure: Services provided
+simultaneously to all members of the community or to all members of a
+particular section of the community, such as all households living in a
+particular region. Includes expenditure on defence and public order and
+general administration expenditure.
+Final consumption expenditure: The sum of household final consumption
+expenditure, government final consumption expenditure, and final
+consumption expenditure of non-profit institutions serving households. Final
+consumption expenditure may also be defined in terms of actual final
+consumption as the value of all the individual goods and services acquired by
+resident households plus the value of the collective services provided by
+general government to the community or to large sections of the community.
+General government sector: Institutional units which, in addition to fulfilling
+their political responsibilities and their role of economic regulation, produce
+principally non-market services (possibly goods) for individual or collective
+consumption and redistribute income and wealth.
+The general government sector in Israel includes the following units:
+government ministries, the National Insurance Institute, local authorities,
+national institutions, and non-profit institutions, where the above-mentioned
+bodies finance the major part of their expenditure.
+Gross capital formation (formerly: domestic capital formation): The net
+acquisition of produced assets for purposes of fixed capital formation,
+inventories or valuables.
+Change in inventories: The value of the entries into inventories less the
+value of withdrawals and less the value of any recurrent losses of goods held
+in inventories during the accounting period, including changes in: (a) stocks of
+outputs that are still held by the units that produced them prior to their being
+further processed, sold, delivered to other units or used in other ways; and (b)
+stocks of products acquired from other units that are intended to be used for
+intermediate consumption or for resale without further processing.
+
+
+    NATIONAL ACCOUNTS                    (3)                     ‫חשבונות לאומיים‬
+Capital stock: Includes tangible productive capital as well as intangible
+productive capital. Accordingly, capital stock does not include non-productive
+capital or financial assets. It also excludes inventories of raw materials,
+finished goods and work-in-progress.
+Gross capital stock: The stock of fixed assets surviving from past
+investment and revalued at the purchasers' prices of the current period. This
+stock increases every year by the addition of gross domestic investment, and
+decreases by the value of assets whose economic life has ended.
+Net capital stock: The sum of the written-down values of all fixed assets still
+in use. It can also be described as the difference between gross capital stock
+and accumulated consumption of fixed capital.
+Consumption of fixed capital: The decline, during the course of the
+accounting period, in the current value of the stock of fixed assets owned and
+used by a producer as a result of physical deterioration, normal obsolescence
+or normal accidental damage.
+Gross fixed capital formation: The total value of a producer's acquisitions,
+less disposals, of fixed assets during the accounting period plus certain
+specified expenditures on services that add to the value of non-produced
+assets.
+Fixed capital formation of business companies, as well as companies from the
+government sector and non-profit institutions, is included.
+Included are acquisitions of durable goods (except land and mineral deposits)
+for civilian use; work in-progress on construction projects; major
+improvements; road construction and other infrastructure projects; outlays on
+improvements to land and fruit plantations. Also included are intangible assets
+(acquisitions and own production of software, expenditure on exploration of
+minerals - oil and gas, and expenditure on research and development).
+Expenditure by the General Government on construction and equipment for
+military use is not included.
+Gross domestic capital formation in infrastructure: Used for the entire
+economy, and includes buildings, construction work, and equipment in the
+following industries: transportation (including sea ports and airports, railways,
+and roads), communications, energy (including electricity, petroleum, and
+gas), water (including water, sewage, desalinization of sea water), and
+advance development (including preparation of area for businesses).
+National balance sheet: A summary of the balance sheets of the domestic
+sectors in the economy. A breakdown of the value of assets and liabilities in
+the institutional sectors and in the overall economy at a given point in time.
+Exports and imports of goods and services
+Goods include: goods for final use; goods for processing; goods procured in
+foreign ports by domestic carriers; and non-monetary gold.
+Services include: transport; travel; communications; construction; insurance;
+financial services; computer and information services; royalties and licence
+fees; other business services; personal, cultural, and recreational services;
+and government services that were not included in the above-mentioned
+items.
+Exports of goods and services: Sales, barter, or gifts or grants, of goods
+and services by residents to non-residents.
+Until 1995, the definition of exports included the components of compensation
+received by exporters.
+
+    NATIONAL ACCOUNTS                    (4)                     ‫חשבונות לאומיים‬
+Imports of goods and services: Purchases, barter, or receipt of gifts or
+grants, of goods and services by residents from non-residents.
+Until 1995, the definition of imports of goods and services included net taxes
+on imports.
+Income received from abroad/paid abroad: Includes compensation of
+employees and income from property, as well as entrepreneurial income (from
+interest, dividends, and profits from reinvestment of foreign earnings) and
+interest paid for the public sector. Until 1995, this item did not include
+payments and receipts of interest of the public sector.
+Property income: The sum of investment income and rent.
+Gross national income (GNI): Gross national income (GNI) is defined as
+GDP plus net compensation of employees and property income receivable
+from abroad, plus taxes less subsidies on production receivable from abroad
+(that is, the GDP plus net primary income from abroad). GNI can also be
+measured at market prices as the aggregate value of the balances of gross
+primary income for all sectors. GNI is identical to GNP as previously used in
+national accounts.
+Net national income (NNI): The aggregate value of the net balances of
+primary incomes summed over all sectors. Net national income equals gross
+national income after the deduction of consumption of fixed capital.
+Net domestic product (NDP): Gross domestic product minus consumption of
+fixed capital.
+Operating surplus: The surplus or deficit accruing from production before
+taking into account any interest, rent or similar charges payable on financial or
+tangible non-produced assets borrowed or rented by the enterprise, or any
+interest, rent or similar receipts receivable on financial or tangible non-
+produced assets owned by the enterprise.
+Net national disposable income: Net national income plus all current
+transfers in cash or in kind receivable by resident institutional units from non-
+resident units minus all current transfers in cash or in kind payable by resident
+institutional units to non-resident units.
+Primary incomes: Incomes that accrue to institutional units as a result of
+their involvement in processes of production or ownership of assets that may
+be needed for purposes of production.
+Disposable income: Disposable income is derived from the balance of
+primary incomes of an institutional unit or sector by adding all current
+transfers, except social transfers in kind, receivable by that unit or sector and
+subtracting all current transfers, except social transfers in kind, payable by
+that unit or sector. This item is the balance in the distribution of secondary
+incomes account.
+Private disposable income is equal to national income less taxes on
+income, contributions to national insurance and property income paid to the
+general government, plus interest payments and other transfers received by
+the private sector from the government and from abroad.
+Adjusted private disposable income: Private disposable income plus
+current transfers in kind.
+Net national saving: The difference between national disposable income at
+market prices and private and general government consumption expenditures.
+Net private saving: Defined as the difference between private disposable
+income and private consumption expenditure. It includes the savings of
+
+    NATIONAL ACCOUNTS                    (5)                     ‫חשבונות לאומיים‬
+households, savings of private non-profit institutions whose expenditures are
+not financed mainly by the government, as well as net saving of the business
+sector.
+Net saving of the general government: In the current account, net saving
+of the general government is the difference between current receipts and
+current expenditures of the general government.
+Surplus on current transactions with the rest of the world: Calculated as
+the excess of current receipts over current disbursements in respect to
+transactions between Israel and the rest of the world.
+A positive surplus means that the amount of national savings is higher than
+the domestic capital formation. In this case, Israel participates (directly or
+indirectly) in financing capital formation abroad. This is done through net
+capital transfers, net acquisition of intangible assets, and/or net acquisition of
+foreign financial assets. In the reverse case, when expenditures are higher
+than receipts, Israel uses foreign sources to finance the domestic capital
+formation.
+Transfer: A transaction in which one institutional unit provides a good, service
+or asset to another unit without receiving from the latter any good, service or
+asset in return as a direct counterpart.
+Current transfer: A transaction in which one institutional unit provides a
+good, service or asset to another unit without receiving from the latter any
+good, service or asset directly in return as counterpart and does not oblige
+one or both parties to acquire, or dispose of, an asset.
+Transfers received from abroad or paid abroad are converted into Israeli
+currency at the official exchange rate.
+Social transfer in kind (formerly: Current transfers in kind): Goods and
+services provided to households by government and NPIs, either free or at
+prices that are not economically significant.
+Capital transfer: Capital transfers are unrequited transfers where the party
+making the transfer either realises the funds involved by disposing of an asset
+(other than cash or inventories), relinquishing a financial claim (other than
+accounts receivable) or the party receiving the transfer is obliged to acquire
+an asset (other than cash) or both conditions are met.
+Taxes: Compulsory unrequited payments, in cash or in kind, made by
+institutional units to government units.
+Taxes on income: Taxes on income, profits and changes in the value of
+capital.
+a. Taxes on income - from wages, property, capital gains, entrepreneurship,
+    and pensions, as well as levies on financial assets, on equity of
+    enterprises and on ownership of goods.
+b. Payments to the National Insurance Institute - both by the insured and by
+    the employer.
+c. Mandatory payments for Israeli passports, court fees, etc.
+Taxes and duties on imports: Taxes on goods and services that become
+payable at the moment when those goods cross the national or customs
+frontiers or when those services are delivered by non-resident producers to
+resident institutional units.
+Other taxes on production: Includes all taxes (except taxes on products)
+that are incurred as a result of engaging in production.
+
+
+    NATIONAL ACCOUNTS                     (6)                     ‫חשבונות לאומיים‬
+Other taxes on production include: taxes on payroll; recurrent taxes on land,
+buildings, and other structures; business and professional licenses; taxes on
+use of fixed assets; stamp taxes; taxes on pollution; and taxes on international
+transactions.
+Taxes on products: Taxes payable per unit of a certain good or service.
+Capital taxes: Taxes levied at irregular and infrequent intervals on the value
+of assets or net worth owned by institutional units, or on the value of assets
+transferred between institutional units as a result of legacies, gifts inter vivos,
+or other transfers.
+Subsidies: Subsidies are current unrequited payments that government units
+(including Israeli government units abroad) make to enterprises on the basis
+of the levels of their production activities or the quantities or values of the
+goods or services that they produce, sell or import. In addition to the direct
+current subsidies, this item also includes the subsidy component of loans to
+finance current activities, which are granted by the government to producers
+under preferential conditions at interest rates lower than those of the market
+(e.g., loans from export funds). However, this item does not include subsidies
+in the form of non-recurrent loans or loans that are not granted on a regular
+basis. The grant component in these loans is defined as capital transfer.
+These capital transfers are presented in Table 11.10.
+Subsidy on a product: A subsidy payable per unit of goods or services.
+Treatment of Value Added Tax in the product account, at market prices:
+The value of domestic uses of resources - private and general government
+consumption and capital formation - and the value of imports, including net
+VAT, i.e., VAT paid less VAT refunded.
+The purchaser’s price: The amount paid by the purchaser, excluding any
+deductible VAT or similar deductible tax, in order to take delivery of a unit of a
+good or service at the time and place required by the purchaser. The
+purchaser’s price of a good includes any transport charges paid separately by
+the purchaser in order to receive the delivery at the required time and place.
+The basic price: The amount receivable by the producer from the purchaser
+for a unit of a good or service produced as output minus any tax payable, and
+plus any subsidy receivable, by that unit as a consequence of its production or
+sale. It excludes any transport charges invoiced separately by the producer.
+The CIF price (cost, insurance and freight): The price of a good delivered
+at the frontier of the importing country, including any insurance and freight
+charges incurred to that point, or the price of a service delivered to a resident,
+before the payment of any import duties or other taxes on imports or trade
+and transport margins within the country.
+The FOB price (free on board): The market value of the goods at the point
+of uniform valuation (the customs frontier of the economy from which they are
+exported). It is equal to the CIF price less the costs of transportation and
+insurance charges, between the customs frontier of the exporting (importing)
+country and that of the importing (exporting) country.
+Classification of product (by industry) in the national accounts is based
+on the Standard Industrial Classification of All Economic Activities, 2011,
+Technical Publication No. 80, with the following differences:
+Agriculture. In the national accounts, the agricultural product is the difference
+between agricultural output of goods defined as agricultural produce, and
+inputs purchased from other industries. The classification is by goods and not
+
+    NATIONAL ACCOUNTS                     (7)                      ‫חשבונות לאומיים‬
+by establishments (agricultural farms), which are classified in the Standard
+Classification of All Economic Activities, 2011 by their main industry.
+Imputed housing services: An item that is included in the product
+classification, but that does not exist in the Standard Classification of
+Economic Activities, 2011. This item comprises income deriving from housing
+services in residential dwellings owned by their tenants.
+Non-profit institutions (NPIs) are divided into two types: (a) Public NPIs -
+institutions where the major part of their expenditure is financed by the
+government sector; and (b) NPIs serving households – institutions where the
+major part of their expenditure is not financed by the government sector.
+SOURCES OF DATA AND METHODS OF COMPUTATION
+NATIONAL EXPENDITURE
+General government consumption expenditure is estimated on the basis
+of analyses of the Accountant General's budget performance reports as well
+as the budget provisions, and by addition of complementary data received
+from the Ministries of Finance and of Defence. The consumption expenditure
+of local authorities, national institutions, and non-profit institutions is estimated
+on the basis of data obtained from analysis of their financial and budget
+reports.
+Private consumption expenditure: As of 1964, the results of the family
+expenditure surveys, which cover (since 1968/69) all urban families, were
+included in private consumption estimates. Estimates for previous years were
+based on the results of household expenditure surveys that covered only
+urban households of employees. The tables present two estimates for 1964,
+which was the year of transition.
+The estimate of food consumption is based on data on marketing of
+agricultural produce, data on production and marketing of industrial food
+products and their prices, and data from the Household Expenditure Survey.
+The estimated expenditure for industrial products other than food is based on
+the Household Expenditure Survey, as well as on data on production and
+marketing of industrial products to the domestic market, and on foreign trade
+statistics.
+The estimate consumption of housing is based on the findings of household
+expenditure surveys as well as on data on the increase in the area of
+residential building and data on changes in the prices of housing services.
+Many of the estimates in the item "other services" are based on the findings of
+household expenditure surveys and on interpolation according to various
+indicators for the years between the surveys. Other estimates (such as
+electricity supply, person-nights in hotels and visits to cinema) are based on
+the relevant quantity and price data.
+Estimates of gross capital formation in fixed assets and capital stock are
+based mainly on the following:
+    a) Data on imports of machinery, equipment, and transportation vehicles;
+    b) Reports on revenue from sales of investment goods from domestic
+        production;
+    c) Quarterly estimates of the area of construction begun and construction
+        completed.
+    d) Data received from government ministries, public institutions and major
+        enterprises on the extent of their investments.
+
+
+    NATIONAL ACCOUNTS                      (8)                       ‫חשבונות לאומיים‬
+    e) The Research and Development Survey, which estimates the
+        expenditures of the business sector on research and development
+        activities.
+    f) Estimates of gross and net capital stock and consumption of fixed
+        capital (which also include data on investments for the current year)
+        relate to 31 December of each year. The data are taken from a
+        quarterly system, in which the annual estimates of gross capital stock
+        and net capital stock are the data of the fourth quarter of each year,
+        and the estimate of consumption of fixed capital is the sum of the four
+        quarters of each year.
+Estimates of change in stocks are based on:
+    a) Data held by the government on quantities of agricultural produce
+        stocks, stocks of fuel, and stocks of essential products;
+    b) Data from the industry and crafts surveys on the value of stocks held
+        by enterprises;
+    c) The estimated change in stocks of diamonds is based on the difference
+        between exports and imports at constant prices.
+    d) Value of unsold output in start-up companies for software and R&D,
+        estimated on the basis of data on investments of venture capital funds
+        in these companies.
+Imports and exports of goods and services: Estimates are based on data
+from the balance of payments (Chapter 12 – International Accounts, and
+Chapter 13 – Imports and Exports of Goods and Services).
+Estimates of changes in the number of employed persons, employees,
+and work hours of employed persons and employees in Israel are
+generally based on the findings of the Labour Force Survey in Israel.
+Estimates for workers from the Palestinian Authority who are employed in
+Israel were based on data from the Labour Force Survey conducted by the
+Palestinian Authority. Prior to 1996 the data were based on findings from
+households surveys in Judea, Samaria and the Gaza Area as well as on data
+from the Employment Service.
+The estimate of the number of foreign workers is derived from a calculation of
+the net number of arrivals to Israel of foreign residents from developing
+countries who are not tourists, new immigrants, diplomats, or students.
+Compensation of employees: Obtained by calculating the sum of labour
+costs in each industry, based on manufacturing surveys such as the Survey of
+Industry. For activities where no survey was carried out, estimates are based
+on administrative reports such as employers' reports to the National Insurance
+Institute or the reports of the Accountant General.
+Compensation of non-employees (employed persons who are not
+employees - employers, self-employed persons, members of co-operatives
+and kibbutzim, and unpaid workers in a family-operated enterprise):
+Estimated by multiplying the number of work hours by the average
+compensation of employees per hour in the relevant industry.
+Constant price estimates for the continuous series of the GDP and its
+components at 1995 prices (Table 11.1), for 1950-1995, were compiled
+separately for each main expenditure item (consumption, capital formation,
+etc.) and for the Gross Domestic Product by chaining the annual quantitative
+changes, which were obtained at prices of various base years. The estimates
+for 1995 to 2018 (Table 11.2) were computed at the prices of the previous
+
+    NATIONAL ACCOUNTS                   (9)                     ‫חשבונות לאומיים‬
+year, and chained at 2015 prices. As a result of chaining, the estimates of
+each component group of the GDP do not add up to the total expenditure on
+the GDP.
+Private consumption estimates at constant prices were obtained either directly
+by using quantitative data, or indirectly by deducting the current price values
+in the appropriate price indices.
+For general government consumption estimates, quantitative changes in the
+expenditure on wages were computed according to the change in the labour
+inputs. Other current expenditures were generally deflated by the wholesale
+price indices of industrial output, which were weighted according to
+characteristic production activities of the various expenditure items.
+The gross capital formation estimate at constant prices was based on the
+building cost index and the equipment price index in Israel and in the principal
+countries of import.
+Estimates of imports and exports of goods at constant prices are obtained by
+multiplying the value of imports or exports in US dollars at constant prices by
+the exchange rate effective during the base year. Data are calculated in US
+dollars at constant prices, according to dollar indices specified for main
+commodities. Estimates of imports and exports of services at constant prices
+are computed by deflating current price estimates using price indices
+specified by type of service.
+Non-profit institutions (NPIs): The value of the income and expenditure of
+NPIs is estimated on the basis of data relating to: income from sales, income
+from current and capital transfers, labour cost, other current expenditures, etc.
+These data are obtained from surveys that are based on analysis of financial
+reports of a sample of NPIs. The surveys conducted in 1991, 2004, 2006,
+2009, 2011, 2013 and 2015 included all NPIs in Israel. The surveys
+conducted in other years covered the four major fields of activity. As of 2011,
+the field of welfare activities was added to the annual surveys.
+National balance sheet: Non-financial fixed assets were recorded in
+accordance with net capital stock estimates, which were prepared by the
+Central Bureau of Statistics in accordance with the distribution of these assets
+among institutional sectors.
+The sources of data for calculation of the financial assets of the different
+sectors were:
+a. The Survey of Trade, Services, Transport, Communications and
+    Construction Survey, the Manufacturing Survey, and the Non-
+    Profit Institutions Survey of the Central Bureau of Statistics.
+b. The Bank of Israel, Supervisor of Banks, Annual Information on
+    the Banking Corporations.
+c. Financial statements of the Bank of Israel and the various banks.
+d. Reports of the Ministry of Finance, Capital Market Department.
+e. Data from the Israel Stock Exchange.
+f. Financial statements of the Israeli government.
+g. Ministry of the Interior – Report on Financial Data of Local
+    Authorities.
+If no sources of information were available on the assets and liabilities of a
+given institutional sector such as the sector of households, two methods were
+used to prepare the national balance sheets:
+
+
+    NATIONAL ACCOUNTS                   (10)                     ‫חשבונות לאומיים‬
+- The “counterpart” method - assets and liabilities were recorded
+   according to their value in the balance sheet of other institutional
+   units in the economy that hold parallel assets and liabilities. This
+   was done because every asset or liability must have a parallel
+   asset or liability.
+- The “residual derivation” method - if the amount of the asset or
+   liability held by one sector is known, then it is calculated by
+   deducting the amounts of assets and liabilities held by the other
+   sectors from the total value of the asset or liability.
+                               NATIONAL INCOME
+The total national income is estimated by summing of the income (net
+product) derived from each industry.
+In most industries (agriculture, manufacturing, construction, and commerce),
+an estimate of total accrued income is obtained by deducting the estimate of
+purchased inputs from the output estimate. In other industries, income is
+measured directly by summing up payments to production factors, i.e.,
+payments of wages and salaries, interest, rent and lease fees, and net profit.
+REVISED ESTIMATES
+In the 2019 Statistical Abstract, revised estimates were introduced for the
+period 1995-2018, in comparison with data published in the previous
+Statistical Abstract. The revisions were introduced after receipt of updated
+data. Furthermore, methodological improvements were made in order to
+adapt the national accounts of Israel to international requirements.
+The main revisions entered into the estimates are:
+       1. Revision of the private consumption series:
+a. Estimates of private consumption expenditure on various
+   manufacturing and services and on food products for 2017-
+   2018 were updated following integration of the findings from
+   the 2016 Household Expenditure Survey.
+b. Estimates of expenditures for services were updated in 1995-
+   2018 for the following items: Financial intermediation services
+   indirectly measured (FISIM), expenditures for financial
+   services and life insurance policies, based on the data from
+   the Capital Market Division at the Ministry of Finance. In
+   addition, estimates of expenditures of Israelis abroad and
+   expenditures of foreign residents in Israel were updated
+   following updates in the Balance of Payments.
+c. Car maintenance expenditures as a wage benefit were
+   updated for 1995-2018, based on data of kilometers travelled
+   from the Ministry of Transport file and the number of jobs from
+   the employees’ income tax files for 2017.
+d. Estimates of expenditure on services at a price lower than
+   market price were revised for 1995-2018.
+e. Estimates of expenditures on internal flights for 2006-2018
+   were revised on the basis of data on the movement of
+   passengers to Elat obtained from the Airport Authority.
+f. Expenditure on travel by train was updated for 2018
+   according to data from Israel Railways, and the data on the
+   travel of soldiers, which is deducted from passenger income,
+   was updated as well.
+
+    NATIONAL ACCOUNTS                   (11)                    ‫חשבונות לאומיים‬
+g. The expenditure on energy for the propulsion of vehicles has
+   been revised for 2006-2018, which were based on the
+   Ministry of Transport's motor vehicles file, which includes data
+   on the kilometers travelled of vehicles, divided by type of
+   ownership and type of car motor. In addition, expenditure on
+   fuel for home use have been revised for 2006-2018.
+h. Estimates of expenditures for housing were updated for 2016-
+   2018 on the basis of Household Expenditure Surveys,
+   combined with estimates based on the Dwellings Register.
+i. Estimates of expenditures for food, beverages, and tobacco
+   relating to 2006-2018 were updated on the basis of updates
+   in the expenditure on agricultural food products: fruit and
+   vegetables for 2017-2018 were updated based on data of the
+   Plants Production and Marketing Board.
+j. Estimates of expenditures for purchases of imported and
+   second-hand vehicles were updated once again for 2018 on
+   the basis of the Vehicle Register of the Ministry of Transport
+   and Road Safety for 2018.
+k. Estimates of expenditures for electricity consumption were
+   updated on the basis of publications of the Israel Electric
+   Corporation for 2018.
+l. Estimates of expenditures of Israelis on websites abroad
+   (personal imports of goods) were updated for the period
+   2006-2018 on the basis of revisions of reports from credit
+   card clearing companies and following the revision of the
+   import price index with the addition of the impact of changes
+   in currency exchange rates.
+       2. Revisions of estimates of general government
+          consumption expenditure:
+a. The general government consumption estimates were revised
+   as of 1995. The revision was carried out after receipt of final
+   financial reports from the central government, the National
+   Insurance Institute, local authorities, national institutions, and
+   non-profit institutions.
+b. Following receipt of the above-mentioned reports, the rest of
+   the series in the general government sector were also
+   updated as of 1995, such as: data on income from property,
+   data on income from taxes, current transfer payments, capital
+   account transfers, gross fixed capital formation, etc.
+       3. Revision of the series of gross capital formation and
+          capital stock:
+a. Estimates of capital formation in construction as of 2009
+     were adjusted on the basis of updated data on the
+     construction area upon completion of residential buildings
+     and non-residential buildings. Also, data on capital formation
+     of local authorities, as well as capital formation in roads and
+     in other construction projects were updated on the basis of
+     new reports received.
+b. Revision of estimates of capital formation in intellectual
+     property: The data on capital formation in own production of
+
+    NATIONAL ACCOUNTS                     (12)                     ‫חשבונות לאומיים‬
+    software as of 2016 were updated on the basis of updated
+    data received on wages. The data on capital formation in
+    R&D for 2016 were updated on the basis of the latest data
+    from the R&D Surveys and the survey of imports and
+    exports of services.
+      4. Revision of the estimates of imports and exports of goods
+         and services:
+a. Imports and exports of goods and services were updated for the period
+   2007-2018, according to revisions in the Balance of Payments, which
+   included the following regarding exports: Updating data on international
+   trade in goods that do not cross Israel’s borders, and a revision due to
+   expanding the correlation between the data on trade in goods and the
+   direct reports of additional companies; regarding imports the revisions
+   included an estimate of purchases of goods by Israelis from sites abroad
+   that are not included in customs data.
+b. Estimates of imports and exports of tourism services from 2017-2018 were
+   updated in accordance with revisions to the Balance of Payments, which
+   were based on a new estimate calculated by the tourism statistics sector.
+c. Imports and exports of business services were revised for 2013-2018, in
+   accordance with revisions in the Balance of Payments.
+d. Indices of imports and exports and other business services were updated
+   for 2014-2018 due to revisions published by the USA Bureau of Economic
+   Analysis.
+e. Income received and paid abroad was revised in 2018 following the receipt
+   of revised data from the Bank of Israel.
+
+     5. Changes to Table 11.9 (Revenue and Expenditure of
+        Government, Local Authorities, National Institutions and
+        Governmental Non-Profit Institutions):
+  The series Revenue from Assets was revised due to methodological
+  changes made in accordance to the requirements of international
+  guidelines to calculate the data on nominal interest. Until now, the
+  revenue from government sector assets that was published was
+  calculated using the real method, i.e. without indexation differentials
+  From now on, Revenue from Assets will include indexation
+  differentials. The revision was made for 1995-2018.
+     6. Revisions to the estimates of the product by industry in
+        the national accounts:
+  a. The product of industries was updated in accordance with data from the
+     2016 survey of industries.
+  b. The adjustments to the survey data were newly calculated, with
+     increased industry breakdown, in order to bring them into line with the
+     updated, accepted international definitions.
+  c. The product of Agriculture was updated in accordance with data on
+     agriculture in Israel for 2018, which were published by the Agriculture,
+     Environment, and Energy sector at the Central Bureau of Statistics.
+  d. The product of the Construction industry was updated in accordance
+     with revised estimates of capital formation in construction, as indicated in
+     Section 3, revised series of gross capital formation.
+
+
+    NATIONAL ACCOUNTS                   (13)                     ‫חשבונות לאומיים‬
+      7. Estimates of the national expenditure on education are presented
+          in Chapter 4 - Education; estimates of the national expenditure on
+          research and development in Chapter 17 – Science, Technology and
+          Communications; estimates of the national expenditure on health are
+          presented in Chapter 3 - Health; estimates of the national expenditure
+          on culture, entertainment and sports are presented in Chapter 5 -
+          Culture, Entertainment and Sport; and estimates of the public
+          expenditure on environmental protection are presented in Chapter 22
+          - Environment. Data on government expenditures and expenditures
+          of national institutions and local authorities according to purpose
+          appear in Chapter 25 – General Government Sector.
+DEFINITIONS OF WAGES, COMPENSATION AND LABOUR COST
+This chapter presents all of the definitions of wages and labour compensation
+that appear in various chapters of the Statistical Abstract. The definitions are
+based on the international guidelines for recording wage expenditure and
+labour cost, as presented in the Manual on National Accounts SNA2008, and
+on the publications of the International Labour Organization (ILO).
+   1. Gross wages: Remuneration in cash or in kind payable by an
+       employer to an employee in return for work done during the accounting
+       period, including compensation for time that the employee did not work,
+       such as yearly vacation, absences, and other paid vacations.
+       Wages include:
+       Remuneration in cash: Payments such as basic wages, cost-of-living
+       allowances, seniority payments, advance payments, overtime,
+       premiums, various benefits, allowances, grants and supplements
+       (current or non-recurring) such as: on-call, shifts, 13th-month salary,
+       transportation, education and proficiency allowances, car allowance,
+       and convalescence pay.
+       Remuneration in kind: Payments such as contributions for car benefits,
+       for mobile phones, holiday gifts, courses, on-the-job training, and travel
+       abroad.
+       Wages do not include:
+       Social contributions payable by employers such as: pension funds,
+       provident funds, study funds, national insurance, and health insurance.
+       Wages also do not include severance payments.
+       Wage data published by the Central Bureau of Statistics are based on
+       administrative information or financial reports from companies or
+       households.
+   2. Supplementary expenses for wages and salaries (employers’
+       social contributions): These include social contributions payable by
+       employers, such as: actual contributions to the National Insurance
+       Institute, to pension plans, provident funds, study funds, etc. In
+       addition, these expenses include imputed contributions to pension
+       expenses for employees, which derive from the employer’s obligation
+       to pay the workers’ retirement pensions instead of contributing to
+       pension funds, for example, imputed contributions to budgetary
+       pension schemes for civil servants.
+   3. Taxes on wages and salaries: Taxes levied on employers for wage
+       and salary expenses, such as payroll tax and employers’ tax.
+
+
+    NATIONAL ACCOUNTS                   (14)                     ‫חשבונות לאומיים‬
+     4. Other components of labour cost: Expenses for vocational training,
+         welfare, recruiting workers, and providing work clothes, maintaining a
+         cafeteria, payments to professional organizations, etc.
+     5. Compensation of employees / compensation for employee jobs
+         (formerly: Compensation of employees): Compensation of
+         employees is defined as the total expenditure for wages and salaries
+         and supplementary expenditures for wages and salaries (items 1+2).
+     6. Imputed compensation of non-employees / imputed compensation
+         for non-employee jobs (formerly: Imputed compensation of non-
+         employees): Compensation of non-employees (employed persons
+         who are not employees - employers, self-employed persons, members
+         of cooperatives, kibbutz members, and unpaid workers in household
+         enterprises) is the imputed value estimated as the number of work
+         hours multiplied by average compensation of employees per hour in
+         the industry that they are employed in.
+     7. Compensation of employed persons / compensation for jobs
+         (formerly: Compensation of employed persons) Compensation of
+         employed persons/compensation for jobs includes compensation of
+         employees/employee jobs and the imputed value of compensation of
+         non-employees/non-employee jobs (items 5+6).
+     8. Labour cost: Labour cost includes compensation of
+         employees/employee jobs, taxes on wages and salaries, and other
+         components of labour cost (items 4+3+5). There may be cases in
+         which reported labour costs include only compensation of employees
+         and taxes on wages and salaries (items 3+5). In those cases, it is
+         recommended to classify the item as a labour cost for employees as
+         well.
+                                  INPUT-OUTPUT
+                                  SUPPLY TABLE
+                                    (Table 11.23)
+Table 11.23 presents data on the supply of the Israeli economy for 2015 and
+2016. The Supply Table is part of a system of supply and demand tables that
+follows the United Nations recommendations presented in A System of
+National Accounts, Studies in Methods.
+The table was published in accordance with the Standard Industrial
+Classification of All Economic Industries 2011, and is based on the last Input-
+Output table which was prepared for 2006.
+Aims of the table:
+a. To present a detailed analysis of the production process in the
+    economy.
+b. To provide a framework for examining the consistency of the
+    statistical system on the flow of goods and services received
+    from various sources – industry surveys and foreign trade
+    statistics.
+The Supply Table presents data on the total sources that were available to the
+economy in a given year, both from imports and from local output. Sources
+are listed according to characteristic groups of commodities produced in each
+industry – in basic prices and in purchaser’s prices. The basic prices are the
+cost prices, including subsidies but not including expenses for marketing,
+transport, and taxes. Purchaser’s prices are obtained by summing up the
+
+    NATIONAL ACCOUNTS                  (15)                     ‫חשבונות לאומיים‬
+supply data in basic prices, marketing and transport margins, and net taxes.
+Import data are presented according to the CIF value, including transport and
+insurance, but they are adjusted to the FOB value. The adjustment to the FOB
+value is calculated by deducting transport and insurance expenses in Israeli
+companies. For further information, see the 2006 Input-Output tables on the
+CBS website.
+SOURCES OF THE DATA
+Output at basic prices: The output for 2015 is based on data from
+agricultural statistics, the surveys of industries, and national accounts
+estimates of output in the Construction industries, government, national
+institutions, local authorities, and nonprofit organizations (public and private).
+Output data for 2016 were estimated on the basis of the 2015 survey of
+industries, and changes in revenue were based on VAT data, as well as on
+indices of Manufacturing, Mining and Quarrying.
+Imports: Based on detailed data on imports of goods and service
+transactions.
+Net taxes: Based on data about taxes on imports within the system of foreign
+trade, and of the National Accounts estimates of taxes on domestic
+production, less subsidies for products.
+
+                       INTERNATIONAL COMPARISONS
+                        PURCHASING POWER PARITY
+                               (Tables 11.24-11.29)
+Explanations and Definitions
+This paragraph presents comparisons of statistical data on Israel with data on
+other countries, particularly countries that are members of the Organization
+for Economic Cooperation and Development (OECD). Different countries tend
+to publish their data using definitions and formats that are convenient for
+them. Therefore, in order to solve problems related to the accuracy of
+comparisons, this chapter presents information that is usually taken from the
+sources of international organizations such as the United Nations, OECD,
+ILO, etc., which prepare data in a way that allows for comparison.
+The international comparisons project was conducted for 47 countries: 35
+countries participating in the comparative research project conducted jointly
+by the OECD-Eurostat were members of the OECD, and 12 countries were
+not members.
+The project was coordinated jointly by the OECD and the statistics office of
+the European Union (Eurostat). The aim of the project was to conduct an
+international comparison of the Gross Domestic Product (GDP) and its
+component expenditure per capita.
+For that purpose, special currency conversion rates - Purchasing Power
+Parities (PPPs) – were constructed, which provide a basis for conversion to a
+common currency and equalizing the purchasing power of different countries.
+The GDP, which is calculated by the PPP, is in fixed prices and the
+differences in the GDP levels between countries reflect only differences in the
+volume of goods and services purchased.
+The price level and volume indices (expenditure per capita) were calculated
+on the basis of the average of the 35 member countries of the OECD.
+Price level indices - were derived by dividing the value of the Purchasing
+Power Parity (PPP) of each country by its regular exchange rate.
+
+    NATIONAL ACCOUNTS                    (16)                     ‫חשבונות לאומיים‬
+Volume indices – were derived by dividing the average GDP per capita in
+each one of the countries, by the average of all the countries participating in
+the calculation.
+SOURCES
+The data in Tables 11.24-11.27 are based on estimates, and were derived
+from the publications of the OECD. Israel participate in the project as a full
+member of the OECD, therefore, estimates for Israel were also calculated by
+the OECD in the same way as the estimates for the other countries.
+The data presented in Tables 11.28 and 11.29 relate to 2014, and were
+collected in 2014-2016. To calculate the PPPs, data on prices were collected
+for a broad range of goods and services (approximately 3,000 items),
+according to specific definitions determined for all of the countries
+participating in the project. For services provided to households at a reduced
+rate or free of charge, data on input prices were collected. In order to weight
+the PPP value and to calculate the product and expenditure items, the
+relevant expenditure data in the national accounts were used.
+
+                          SELECTED PUBLICATIONS
+SPECIAL PUBLICATIONS
+1016 Non-Profit Institutions in Israel 1991
+1077 Survey of Income and Expenditures of Non-Profit Institutions, 1980-
+     1996
+1097 National Accounts of Israel 1950-1997
+1099 Gross Domestic Fixed Capital Formation 1950-1997
+1151 International Comparison Programme (ICP) - International Comparison
+     of Gross Domestic Product and the Main Expenditure Components in
+     Terms of Purchasing Power Parities (PPP), 1996
+1425 Survey of Products and Materials in Manufacturing 2006
+     Survey of Import Destinations 2006 (Internet only)
+1453 National Balance Accounts 2009
+1467 Supply and Use Table 2006 and Supply Table 2007-2008
+1508 Survey of Trade, Services, Transport, Communications and
+     Construction 2009
+1510 Manufacturing Survey 2009
+1561 Input-Output Tables, 2006
+1742 National Accounts 1995-2017
+1753 Private Consumption Expenditure by Industry 1995-2017
+1748 General Government Sector Accounts, 2000-2017
+JUBILEE PUBLICATIONS (on the occasion of Israel’s 50th year)
+National Accounts (No. 3 in the series)
+
+
+
+
+    NATIONAL ACCOUNTS                   (17)                     ‫חשבונות לאומיים‬
+

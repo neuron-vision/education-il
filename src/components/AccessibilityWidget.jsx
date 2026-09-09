@@ -34,6 +34,7 @@ export default function AccessibilityWidget() {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs))
     document.documentElement.style.fontSize = `${FONT_STEPS[prefs.fontStep]}%`
+    document.documentElement.style.setProperty('--a11y-zoom', FONT_STEPS[prefs.fontStep] / 100)
     document.documentElement.classList.toggle('a11y-contrast', prefs.highContrast)
     document.documentElement.classList.toggle('a11y-underline', prefs.underlineLinks)
     document.documentElement.classList.toggle('a11y-readable-font', prefs.readableFont)

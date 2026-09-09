@@ -9,6 +9,14 @@ import './ChatBot.css'
 
 const CHAT_FUNCTION_URL = 'https://us-central1-education-il.cloudfunctions.net/chat'
 
+// gemini-flash-latest pricing per 1M tokens (USD) — update if the model in functions/index.js changes.
+const PRICE_PER_M_INPUT = 0.075
+const PRICE_PER_M_OUTPUT = 0.30
+
+function pageText() {
+  return document.body.innerText.replace(/\s+/g, ' ').trim()
+}
+
 export default function ChatBot() {
   const user = useAuth()
   const [open, setOpen] = useState(false)
@@ -16,6 +24,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [busy, setBusy] = useState(false)
+  const [usage, setUsage] = useState({ inputTokens: 0, outputTokens: 0 })
   const scrollRef = useRef(null)
 
   useEffect(() => {
@@ -50,7 +59,7 @@ export default function ChatBot() {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ messages: history, sessionId }),
+        body: JSON.stringify({ messages: history, sessionId, pageText: pageText() }),
       })
 
       if (!res.ok || !res.body) {
@@ -72,8 +81,15 @@ export default function ChatBot() {
         for (const line of lines) {
           const payload = line.replace(/^data: /, '').trim()
           if (!payload || payload === '[DONE]') continue
-          const { text: chunk, error } = JSON.parse(payload)
+          const { text: chunk, error, usage: chunkUsage } = JSON.parse(payload)
           if (error) throw new Error(error)
+          if (chunkUsage) {
+            setUsage((u) => ({
+              inputTokens: u.inputTokens + chunkUsage.inputTokens,
+              outputTokens: u.outputTokens + chunkUsage.outputTokens,
+            }))
+            continue
+          }
           assistantText += chunk
           setMessages((prev) => {
             const next = [...prev]
@@ -103,7 +119,7 @@ export default function ChatBot() {
             <span>🤖 שאל על נתוני החינוך</span>
             <div className="cb-header-actions">
               {user && (
-                <button type="button" onClick={() => setMessages([])} title="נקה">↺</button>
+                <button type="button" onClick={() => { setMessages([]); setUsage({ inputTokens: 0, outputTokens: 0 }) }} title="נקה">↺</button>
               )}
               <button type="button" onClick={() => setMaximized((m) => !m)} title={maximized ? 'שחזור' : 'הגדלה'}>
                 {maximized ? '⤡' : '⤢'}
@@ -111,6 +127,16 @@ export default function ChatBot() {
               <button type="button" onClick={() => setOpen(false)} title="סגור">✕</button>
             </div>
           </div>
+
+          {user?.isAdmin && (usage.inputTokens > 0 || usage.outputTokens > 0) && (
+            <div className="cb-usage">
+              {usage.inputTokens}↑ / {usage.outputTokens}↓ טוקנים · $
+              {(
+                (usage.inputTokens * PRICE_PER_M_INPUT + usage.outputTokens * PRICE_PER_M_OUTPUT) /
+                1_000_000
+              ).toFixed(4)}
+            </div>
+          )}
 
           {user === undefined ? (
             <div className="cb-gate"><p>טוען…</p></div>
