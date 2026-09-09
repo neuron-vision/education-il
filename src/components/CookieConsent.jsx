@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { track } from '../lib/analytics'
 import './CookieConsent.css'
 
 const STORAGE_KEY = 'cookie_consent_v1'
@@ -21,7 +22,7 @@ export default function CookieConsent() {
         <Link to="/נגישות">הצהרת הנגישות</Link>.
       </p>
       <div className="cc-actions">
-        <button type="button" className="cc-accept" onClick={() => setChoice('accepted')}>הבנתי, אישור</button>
+        <button type="button" className="cc-accept" onClick={() => { track('cookie_consent_accepted'); setChoice('accepted') }}>הבנתי, אישור</button>
       </div>
     </div>
   )

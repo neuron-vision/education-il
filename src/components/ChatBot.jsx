@@ -9,6 +9,7 @@ import { auth, appCheck, googleProvider } from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase'
 import { useAuth } from '../lib/useAuth'
+import { track } from '../lib/analytics'
 import { RESEARCH_CONTEXT } from '../data/educationData.js'
 import './ChatBot.css'
 
@@ -29,6 +30,10 @@ const PRICE_PER_M_INPUT = 0.075
 const PRICE_PER_M_OUTPUT = 0.30
 const MAX_MESSAGE_CHARS = 2000
 
+// Module-level (not component state) so it survives widget close/reopen and
+// only fires once per page load — our proxy for "once per session".
+let firstMessageSentThisSession = false
+
 function pageText() {
   return document.body.innerText.replace(/\s+/g, ' ').trim()
 }
@@ -44,6 +49,7 @@ export default function ChatBot() {
   const [lock, setLock] = useState(null)
   const [clock, setClock] = useState(Date.now())
   const scrollRef = useRef(null)
+  const gotFirstValidResponse = useRef(false)
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight })
@@ -86,7 +92,9 @@ export default function ChatBot() {
   async function signIn() {
     try {
       await signInWithPopup(auth, googleProvider)
+      track('chatbot_sign_in')
     } catch (e) {
+      track('chatbot_sign_in_error', { message: e.message })
       setMessages((prev) => [...prev, { role: 'assistant', text: `שגיאת התחברות: ${e.message}` }])
     }
   }
@@ -96,6 +104,11 @@ export default function ChatBot() {
     if (!text || busy || !user || lock || text.length > MAX_MESSAGE_CHARS) return
     setInput('')
     setBusy(true)
+    track('chatbot_send_message', { message_length: text.length, is_suggested: overrideText !== undefined })
+    if (!firstMessageSentThisSession) {
+      firstMessageSentThisSession = true
+      track('chatbot_first_message_session')
+    }
 
     const history = [...messages, { role: 'user', text }]
     setMessages([...history, { role: 'assistant', text: '' }])
@@ -121,10 +134,12 @@ export default function ChatBot() {
         const release = yaml.match(/release_at:\s*"([^"]+)"/)?.[1]
         setLock({ releaseAt: release ? new Date(release) : new Date(Date.now() + 3 * 86400000), reason: yaml })
         toast.error('שימוש לא מאושר ונחסם', { className: 'cb-toast-blocked' })
+        track('chatbot_locked')
         throw new Error('הצ׳אט ננעל. ניתן לראות את הספירה לאחור בחלון הצ׳אט.')
       }
       if (!res.ok || !res.body) {
         const err = await res.json().catch(() => ({}))
+        track('chatbot_error', { status: res.status })
         throw new Error(err.error || `שגיאת שרת (${res.status})`)
       }
 
@@ -149,6 +164,7 @@ export default function ChatBot() {
               inputTokens: u.inputTokens + chunkUsage.inputTokens,
               outputTokens: u.outputTokens + chunkUsage.outputTokens,
             }))
+            track('chatbot_response_complete', chunkUsage)
             continue
           }
           assistantText += chunk
@@ -168,6 +184,10 @@ export default function ChatBot() {
             next[next.length - 1] = { role: 'assistant', text: assistantText }
             return next
           })
+          if (!gotFirstValidResponse.current) {
+            gotFirstValidResponse.current = true
+            track('chatbot_first_valid_response')
+          }
         }
       }
     } catch (e) {
@@ -266,7 +286,7 @@ export default function ChatBot() {
                 <span className="cb-char-count">{input.length}/{MAX_MESSAGE_CHARS}</span>
                 <button type="button" onClick={() => send()} disabled={busy || !input.trim()}>שלח</button>
               </div>}
-              <button type="button" className="cb-signout" onClick={() => signOut(auth)}>
+              <button type="button" className="cb-signout" onClick={() => { track('sign_out', { source: 'chatbot' }); signOut(auth) }}>
                 התנתק ({user.displayName}
                 {user.isAdmin && <span className="cb-admin-badge">מנהל</span>})
               </button>
@@ -274,7 +294,15 @@ export default function ChatBot() {
           )}
         </div>
       )}
-      <button type="button" className="cb-bubble" onClick={() => setOpen((o) => !o)}>
+      <button
+        type="button"
+        className="cb-bubble"
+        onClick={() => {
+          const next = !open
+          setOpen(next)
+          track(next ? 'chatbot_open' : 'chatbot_close')
+        }}
+      >
         {open ? '✕' : '🤖'}
       </button>
     </div>

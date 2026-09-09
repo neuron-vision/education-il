@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { track } from '../lib/analytics'
 import './AccessibilityWidget.css'
 
 const STORAGE_KEY = 'a11y_prefs_v1'
@@ -53,6 +54,7 @@ export default function AccessibilityWidget() {
   }, [prefs.readingGuide])
 
   function update(patch) {
+    track('a11y_pref_change', patch)
     setPrefs((p) => ({ ...p, ...patch }))
   }
 
@@ -105,7 +107,13 @@ export default function AccessibilityWidget() {
           <Link to="/נגישות" className="a11y-statement-link" onClick={() => setOpen(false)}>הצהרת נגישות</Link>
         </div>
       )}
-      <button type="button" className="a11y-bubble" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-label="הגדרות נגישות">
+      <button
+        type="button"
+        className="a11y-bubble"
+        onClick={() => { const next = !open; setOpen(next); track(next ? 'a11y_panel_open' : 'a11y_panel_close') }}
+        aria-expanded={open}
+        aria-label="הגדרות נגישות"
+      >
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="1.5" />
           <circle cx="12" cy="7.2" r="1.7" fill="currentColor" />
