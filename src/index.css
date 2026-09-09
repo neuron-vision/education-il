@@ -3,6 +3,10 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background: #ECEFF1;
@@ -47,11 +51,16 @@ body {
   right: 0;
   left: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
   padding: 10px 20px;
   background: #161a21;
   border-bottom: 1px solid #2a2f3a;
+}
+@media (max-width: 480px) {
+  .app-nav { padding: 8px 12px; gap: 6px; }
+  .app-nav-user { width: 100%; justify-content: flex-end; margin-inline-start: 0; order: 3; }
 }
 .app-nav a { color: #d9dee7; text-decoration: none; padding: 5px 12px; border-radius: 16px; background: #20242d; font-size: 13px; }
 .app-nav-user { margin-inline-start: auto; display: flex; align-items: center; gap: 8px; color: #9ca3af; font-size: 12px; }

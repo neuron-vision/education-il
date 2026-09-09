@@ -1,7 +1,23 @@
 .cb-root { position: fixed; bottom: 20px; left: 20px; z-index: 1000; font-family: inherit; }
 .cb-bubble { width: 56px; height: 56px; border-radius: 50%; border: none; background: #3d7ea6; color: #fff; font-size: 24px; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 0, 0, .4); }
+
+@media (max-width: 480px) {
+  .cb-root { bottom: 14px; left: 14px; }
+  .cb-bubble { width: 48px; height: 48px; font-size: 20px; }
+}
 .cb-window { position: fixed; bottom: 88px; left: 20px; width: 360px; height: 480px; background: var(--surface); color: var(--text); border: 1px solid var(--rule); border-radius: 16px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 12px 40px rgba(0, 0, 0, .5); }
 .cb-window-maximized { width: 90vw; height: 90vh; bottom: 5vh; left: 5vw; }
+
+@media (max-width: 480px) {
+  .cb-window {
+    left: 10px;
+    right: 10px;
+    bottom: 80px;
+    width: auto;
+    height: min(70vh, 480px);
+  }
+  .cb-window-maximized { left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; border-radius: 0; }
+}
 .cb-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--surface-alt); border-bottom: 1px solid var(--rule); font-size: 13.5px; font-weight: 600; }
 .cb-header-actions button { background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 14px; padding: 2px 6px; }
 .cb-header-actions button:hover { color: var(--text); }

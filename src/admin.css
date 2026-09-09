@@ -2,6 +2,10 @@
 .admin-page h1, .admin-page h2 { font-family: 'Frank Ruhl Libre', serif; }
 .admin-page h1 { font-size: 32px; margin: 0 0 24px; }
 .admin-page h2 { font-size: 20px; margin: 0 0 16px; }
+@media (max-width: 480px) {
+  .admin-page { padding: 100px 14px 60px; }
+  .admin-page h1 { font-size: 24px; }
+}
 .admin-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 20px; }
 .admin-stats div, .admin-card { background: #1b1f27; border: 1px solid #2a2f3a; border-radius: 6px; padding: 18px; }
 .admin-stats b { display: block; font-size: 34px; color: #3d9668; }
