@@ -1,12 +1,15 @@
 import { initializeApp } from 'firebase-admin/app'
 import { getAuth } from 'firebase-admin/auth'
 
-const [email, passwordArg, claimsArg] = process.argv.slice(2)
-const password = process.env.FIREBASE_USER_PASSWORD || passwordArg
-const claimsJson = process.env.FIREBASE_USER_PASSWORD ? (claimsArg || passwordArg || '{}') : (claimsArg || '{}')
+// Grants custom claims (e.g. { "admin": true }) to an existing user, looked up by
+// email. The user must already exist — sign in via Google once first. Password
+// auth was removed as a public attack surface; see functions/mint_test_credentials.mjs
+// for how test scripts authenticate instead.
+const [email, claimsArg] = process.argv.slice(2)
+const claimsJson = claimsArg || '{}'
 
-if (!email || !password) {
-  console.error('Usage: FIREBASE_USER_PASSWORD=... node set_username_and_password_with_claims.mjs <email> [claims-json]')
+if (!email) {
+  console.error('Usage: node set_username_and_password_with_claims.mjs <email> [claims-json]')
   process.exit(1)
 }
 
@@ -26,16 +29,6 @@ if (!claims || Array.isArray(claims) || typeof claims !== 'object') {
 initializeApp({ projectId: 'education-il' })
 const auth = getAuth()
 
-let user
-try {
-  user = await auth.getUserByEmail(email)
-  user = await auth.updateUser(user.uid, { password })
-  console.log(`Updated password for ${user.email}`)
-} catch (error) {
-  if (error.code !== 'auth/user-not-found') throw error
-  user = await auth.createUser({ email, password })
-  console.log(`Created user ${user.email}`)
-}
-
+const user = await auth.getUserByEmail(email)
 await auth.setCustomUserClaims(user.uid, claims)
 console.log(`Set custom claims for ${user.email}: ${JSON.stringify(claims)}`)

@@ -15,7 +15,6 @@
   },
   "auth": {
     "providers": {
-      "emailPassword": true,
       "googleSignIn": {
         "oAuthBrandDisplayName": "neuron.vision",
         "supportEmail": "ishay@neuron.vision"
