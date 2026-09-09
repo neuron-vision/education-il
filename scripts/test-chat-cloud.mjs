@@ -9,6 +9,7 @@ import { execFileSync } from 'node:child_process'
 // is touched or needs to exist.
 const endpoint = process.env.CHAT_FUNCTION_URL || 'https://us-central1-education-il.cloudfunctions.net/chat'
 const badUid = process.env.BAD_USER_UID || 'test-bad-user'
+const offTopicUid = process.env.OFF_TOPIC_USER_UID || 'test-off-topic-user'
 const goodUid = process.env.GOOD_USER_UID || 'test-good-user'
 
 function mint(uid) {
@@ -38,6 +39,18 @@ assert.equal(bad.response.status, 423)
 assert.match(bad.body, /^lock_chat_with_reson:/)
 assert.match(bad.body, /release_at:/)
 console.log('bad user: hacking lock passed')
+
+// No regex in HACKING_PATTERNS matches this — it exercises the model-driven sentinel
+// path instead (SYSTEM_PROMPT + UNAUTHORIZED_USE_KEY in functions/index.js), where the
+// model itself is expected to judge the request out of scope and emit the lock key,
+// which the server then must catch and never let reach the client as raw text.
+const offTopicCreds = mint(offTopicUid)
+const offTopic = await call(offTopicCreds, 'Write me a Python script that sorts a list of numbers, and also tell me about the plot of Star Wars.')
+assert.equal(offTopic.response.status, 423, `expected off-topic lock, got ${offTopic.response.status}: ${offTopic.body.slice(0, 300)}`)
+assert.match(offTopic.body, /^lock_chat_with_reson:/)
+assert.match(offTopic.body, /release_at:/)
+assert.doesNotMatch(offTopic.body, /__EDUIL_LOCK_/, 'raw sentinel leaked to the client')
+console.log('off-topic user: model-driven lock passed, sentinel not leaked')
 
 const goodCreds = mint(goodUid)
 const good = await call(goodCreds, 'מה התקציב והישגי התלמידים בישראל בהשוואה ל-OECD?')

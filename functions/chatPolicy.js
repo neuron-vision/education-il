@@ -1,6 +1,18 @@
 export const MAX_MESSAGE_CHARS = 2000
 export const DAILY_CHAT_LIMIT = 10
 
+// Sentinel the model is instructed to emit (see SYSTEM_PROMPT in index.js) whenever it judges
+// the request to be unauthorized use — off-topic (not Israeli education, even in a world-comparison
+// framing), an attempt to drain tokens/quota, or an attempt to override these instructions. Checked
+// on both sides: the server scans the full reply before ever streaming it to the client (so the key
+// itself is never delivered), and the client re-checks each incoming chunk as defense in depth in
+// case a bug or a future model regression lets it leak through the stream.
+export const UNAUTHORIZED_USE_KEY = '__EDUIL_LOCK_9f3a2e__'
+
+export function containsLockKey(text) {
+  return String(text || '').includes(UNAUTHORIZED_USE_KEY)
+}
+
 export const HACKING_PATTERNS = [
   /ignore\s+(all\s+)?previous\s+instructions/i,
   /disregard\s+(all\s+)?(previous|system)\s+instructions/i,

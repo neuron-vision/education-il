@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 
 const W = 1000
-const H = 460
-const PAD = { top: 20, right: 24, bottom: 96, left: 44 }
+const H = 520
+const PAD = { top: 20, right: 24, bottom: 156, left: 44 }
 const EVENT_LANE_H = 30
 const EVENT_LANES = 2
 
@@ -13,10 +13,13 @@ function niceYearTicks(minYear, maxYear, targetCount = 9) {
   const steps = [1, 2, 5, 10, 20, 25, 50]
   const step = steps.find((s) => s >= rawStep) ?? steps[steps.length - 1]
   const start = Math.ceil(minYear / step) * step
+  const minGap = Math.max(1, step * 0.4)
   const ticks = []
   for (let y = start; y <= maxYear; y += step) ticks.push(y)
-  if (ticks[0] !== minYear) ticks.unshift(minYear)
-  if (ticks[ticks.length - 1] !== maxYear) ticks.push(maxYear)
+  while (ticks.length && ticks[0] - minYear < minGap) ticks.shift()
+  while (ticks.length && maxYear - ticks[ticks.length - 1] < minGap) ticks.pop()
+  ticks.unshift(minYear)
+  ticks.push(maxYear)
   return ticks
 }
 
@@ -148,6 +151,17 @@ export default function TimelineChart({ series, events, activeKeys, minYear, max
                 fontWeight={isHovered ? 700 : 400}
               >
                 ●
+              </text>
+              <text
+                x={e.x + 8}
+                y={laneY + 8}
+                fontSize="10"
+                fill={isHovered ? 'var(--text, #e5e7eb)' : e.color}
+                fontWeight={isHovered ? 700 : 500}
+                textAnchor="start"
+                transform={`rotate(-90, ${e.x + 8}, ${laneY + 8})`}
+              >
+                {Math.round(e.year)} · {e.label}
               </text>
               {isHovered && (
                 <g>

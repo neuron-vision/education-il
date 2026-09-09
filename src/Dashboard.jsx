@@ -6,7 +6,11 @@ import BarCompare from './components/BarCompare.jsx'
 import CausesSection from './CausesSection.jsx'
 import StackedBar, { StackedLegend, SupervisionTable } from './components/StackedBar.jsx'
 import GapCard from './components/GapCard.jsx'
+import MoneySpendTrend from './components/MoneySpendTrend.jsx'
+import ScoreVsBudgetTrend from './components/ScoreVsBudgetTrend.jsx'
 import { PISA, TIMSS, EXPENDITURE, SOURCES, RESEARCH_METRICS } from './data/educationData.js'
+import { MONEY_VS_ACHIEVEMENT } from './data/moneyVsAchievementData.js'
+import { BUDGET_BY_YEAR, PISA_MEAN_BY_YEAR, BUDGET_SOURCES } from './data/budgetTrendData.js'
 import {
   MEITZAV_HERO,
   MEITZAV_DISTRIBUTION,
@@ -95,6 +99,10 @@ function PisaSection() {
         <LineChart years={PISA.years} series={series} />
       </div>
 
+      <div className="dash-section-note" style={{ marginTop: 8, fontSize: 12, lineHeight: 1.6 }}>
+        קו ה-OECD מוצג כרף קבוע (2022 בלבד) ולא כמגמה: לרוב השנים האחרות אין ערך OECD ממוצע מאומת ועקבי במקור אחד — שינויים בהרכב חברות ה-OECD ובשיטת הניקוד בין מחזורים הופכים השוואה ישירה בין שנים ללא מקור אחיד למטעה.
+      </div>
+
       <div className="callout" style={{ marginTop: 16 }}>
         <b>{PISA.ranks2025.note}</b>
       </div>
@@ -147,7 +155,7 @@ function TimssSection() {
       </div>
 
       <div className="dash-section-note" style={{ marginTop: 8, fontSize: 12, lineHeight: 1.6 }}>
-        ○ נקודות חלולות = שנים עם הסתייגות מדגם רשמית (NCES/IEA): ב-2003 המדגם לא עמד בהנחיות הבינלאומיות; ב-2007/2011/2015 כיסוי אוכלוסיית היעד הלאומית עמד על 77%–90% בלבד. הציונים מתפרסמים ומשמשים במגמות רשמיות חרף ההסתייגות. פירוט מלא ב-sources.md.
+        ○ נקודות חלולות = שנים עם הסתייגות מדגם רשמית (NCES/IEA): ב-2003 המדגם לא עמד בהנחיות הבינלאומיות; ב-2007/2011/2015 כיסוי אוכלוסיית היעד הלאומית עמד על 77%–90% בלבד. הציונים מתפרסמים ומשמשים במגמות רשמיות חרף ההסתייגות.
       </div>
 
       <div className="callout" style={{ marginTop: 16 }}>
@@ -298,21 +306,26 @@ function MoneyVsAchievementSection() {
         <h2>האם כסף = הישגים?</h2>
         <span className="dash-section-note">מחקר בינלאומי</span>
       </div>
-      <ul className="bullets">
+      <MoneySpendTrend data={MONEY_VS_ACHIEVEMENT} />
+      <ul className="bullets" style={{ marginTop: 24 }}>
         <li>
-          ה-OECD מזהה <b>סף של כ-75,000$</b> הוצאה מצטברת לתלמיד (גילאי 6–15) — מעבר לסף הזה, הקשר בין הוצאה נוספת להישגים <b>נחלש עד נעדר</b>.
+          <b>תיקון עובדתי:</b> קוריאה אינה דוגמה ל"תוצאות גבוהות בהוצאה נמוכה" — היא מוציאה מעל הממוצע: כ-25,267$ לתלמיד תיכון, פי 1.8 מממוצע ה-OECD. חלק מהישגי קוריאה, סינגפור, יפן וטייוואן מיוחס גם ל"חינוך צללים" (שיעורים פרטיים בתשלום הורים) שאינו נכלל בתקציב הממשלתי. קטאר כן מוציאה הרבה יחסית ולא משיגה תוצאות בהתאם — דוגמה תקפה לחוסר קשר בהוצאה גבוהה.
         </li>
         <li>
-          במדינות מתחת לסף, השקעה כספית נוספת <b>כן</b> מתואמת עם הישגים גבוהים יותר — פער איכות בין מדינות עניות לעשירות.
-        </li>
-        <li>
-          <b>תיקון עובדתי:</b> בבדיקה חוזרת נמצא שקוריאה למעשה <b>מוציאה מעל הממוצע</b> — כ-25,267$ לתלמיד תיכון (פי 1.8 מממוצע ה-OECD של 14,096$) — כך שאינה דוגמה ל"תוצאות גבוהות בהוצאה נמוכה". חלק ניכר מהישגי קוריאה, סינגפור, יפן וטייוואן מיוחס גם ל"חינוך צללים" (שיעורים פרטיים בתשלום הורים) שאינו נכלל בתקציב הממשלתי. קטאר אכן מוציאה הרבה יחסית ולא משיגה תוצאות גבוהות בהתאם — דוגמה תקפה לחוסר קשר בהוצאה גבוהה.
-        </li>
-        <li>
-          ישראל נמצאת בין קבוצת המדינות עם <b>הפער הסוציו-אקונומי הרחב ביותר</b> בהישגים (יחד עם רומניה, סלובקיה והונגריה) — פער של 124 נק' במתמטיקה בין תלמידים מבוססים לחלשים, מול ממוצע OECD של 93 נק'. כלומר איך שמחלקים את הכסף חשוב לפחות כמו כמה מוציאים.
+          ישראל בין המדינות עם <b>הפער הסוציו-אקונומי הרחב ביותר בהישגים</b> (עם רומניה, סלובקיה והונגריה): פער של 124 נק' במתמטיקה בין תלמידים מבוססים לחלשים, מול ממוצע OECD של 93 נק'. כלומר: איך מחלקים את הכסף חשוב לפחות כמו כמה מוציאים.
         </li>
       </ul>
       <SourceList sources={[...SOURCES.moneyVsAchievement, { label: 'OECD — Education at a Glance 2025, Korea', url: 'https://www.oecd.org/en/publications/education-at-a-glance-2025_1a3543e2-en/korea_252c9ed2-en.html' }]} />
+
+      <div className="dash-section-head" style={{ marginTop: 40 }}>
+        <h2>ציון PISA מול תקציב החינוך בישראל — לאורך שנים</h2>
+        <span className="dash-section-note">2006–2025</span>
+      </div>
+      <ScoreVsBudgetTrend
+        scoreData={PISA_MEAN_BY_YEAR}
+        budgetData={BUDGET_BY_YEAR}
+        sources={BUDGET_SOURCES}
+      />
     </section>
   )
 }
@@ -362,7 +375,7 @@ export function DashboardHeader() {
 export function DashboardFooter() {
   return (
     <footer className="dash-footer">
-          מקורות מלאים בקובץ <code>sources.md</code>. חלק מהנתונים ההיסטוריים (במיוחד ממוצעי OECD לשנים
+          חלק מהנתונים ההיסטוריים (במיוחד ממוצעי OECD לשנים
           שלפני 2022 ו-TIMSS 2007–2015) לא אומתו ישירות מול מקור רשמי ומסומנים בהתאם. לשימוש אקדמי, יש
           לאמת מול{' '}
           <a href="https://www.oecd.org/pisa/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>

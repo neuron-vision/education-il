@@ -72,7 +72,10 @@ export const TIMELINE_SERIES = [
 
 // אירועים לציר הזמן — kind: 'test' | 'reform' | 'crisis'
 export const TIMELINE_EVENTS = [
+  { year: 2000.75, label: 'האינתיפאדה השנייה', kind: 'crisis' },
+  { year: 2006.5, label: 'מלחמת לבנון השנייה', kind: 'crisis' },
   { year: 2008, label: 'רפורמת אופק חדש', kind: 'reform' },
+  { year: 2014.5, label: 'מבצע "צוק איתן"', kind: 'crisis' },
   { year: 2011, label: 'רפורמת עוז לתמורה', kind: 'reform' },
   { year: 2014, label: 'תקצוב דיפרנציאלי + למידה משמעותית', kind: 'reform' },
   { year: 2020, label: 'קורונה — סגרים והוראה מרחוק', kind: 'crisis' },

@@ -58,9 +58,13 @@ body {
   background: #161a21;
   border-bottom: 1px solid #2a2f3a;
 }
+#main-content {
+  padding-top: 53px;
+}
 @media (max-width: 480px) {
   .app-nav { padding: 8px 12px; gap: 6px; }
   .app-nav-user { width: 100%; justify-content: flex-end; margin-inline-start: 0; order: 3; }
+  #main-content { padding-top: 96px; }
 }
 .app-nav a { color: #d9dee7; text-decoration: none; padding: 5px 12px; border-radius: 16px; background: #20242d; font-size: 13px; }
 .app-nav a.active { background: #3d7ea6; color: #fff; }

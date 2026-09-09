@@ -3,6 +3,7 @@ import { signInWithPopup, signOut } from 'firebase/auth'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import toast, { Toaster } from 'react-hot-toast'
 import { getToken } from 'firebase/app-check'
 import { auth, appCheck, googleProvider } from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
@@ -10,6 +11,13 @@ import { db } from '../firebase'
 import { useAuth } from '../lib/useAuth'
 import { RESEARCH_CONTEXT } from '../data/educationData.js'
 import './ChatBot.css'
+
+// Mirrors UNAUTHORIZED_USE_KEY in functions/chatPolicy.js. The server already strips this
+// sentinel out of every streamed reply before it ever reaches the client (see index.js), so
+// this check should never actually fire — it exists as defense in depth in case a bug or a
+// future model/server change lets it leak through, in which case the chat still locks itself
+// client-side rather than silently displaying the raw key to the user.
+const UNAUTHORIZED_USE_KEY = '__EDUIL_LOCK_9f3a2e__'
 
 const CHAT_FUNCTION_URL =
   import.meta.env.VITE_USE_EMULATORS === 'true'
@@ -112,6 +120,7 @@ export default function ChatBot() {
         const yaml = await res.text()
         const release = yaml.match(/release_at:\s*"([^"]+)"/)?.[1]
         setLock({ releaseAt: release ? new Date(release) : new Date(Date.now() + 3 * 86400000), reason: yaml })
+        toast.error('שימוש לא מאושר ונחסם', { className: 'cb-toast-blocked' })
         throw new Error('הצ׳אט ננעל. ניתן לראות את הספירה לאחור בחלון הצ׳אט.')
       }
       if (!res.ok || !res.body) {
@@ -143,6 +152,17 @@ export default function ChatBot() {
             continue
           }
           assistantText += chunk
+          if (assistantText.includes(UNAUTHORIZED_USE_KEY)) {
+            toast.error('שימוש לא מאושר ונחסם', { className: 'cb-toast-blocked' })
+            setMessages((prev) => {
+              const next = [...prev]
+              next[next.length - 1] = { role: 'assistant', text: 'הבקשה זוהתה כשימוש לא מאושר. הצ׳אט נחסם.' }
+              return next
+            })
+            setLock({ releaseAt: new Date(Date.now() + 3 * 86400000), reason: 'unauthorized use (client-side catch)' })
+            await reader.cancel().catch(() => {})
+            return
+          }
           setMessages((prev) => {
             const next = [...prev]
             next[next.length - 1] = { role: 'assistant', text: assistantText }
@@ -165,6 +185,15 @@ export default function ChatBot() {
 
   return (
     <div className="cb-root" dir="rtl">
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          className: 'cb-toast-blocked',
+          duration: 6000,
+          style: { background: '#b8433d', color: '#fff', fontWeight: 700, fontSize: '14px' },
+          iconTheme: { primary: '#fff', secondary: '#b8433d' },
+        }}
+      />
       {open && (
         <div className={`cb-window${maximized ? ' cb-window-maximized' : ''}`}>
           <div className="cb-header">
