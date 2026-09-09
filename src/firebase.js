@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app'
+import { initializeAppCheck, ReCaptchaEnterpriseProvider } from 'firebase/app-check'
 import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
@@ -15,7 +16,18 @@ const firebaseConfig = {
   measurementId: 'G-LS5Y3R329X',
 }
 
+// reCAPTCHA Enterprise site key — also a public client-side identifier, not a secret.
+const RECAPTCHA_SITE_KEY = '6LcsyrItAAAAAN1FAKCsLOiDrOMTau9wYczZvHpy'
+
 export const app = initializeApp(firebaseConfig)
+
+// Proves requests to the `chat` Cloud Function come from this registered app,
+// not a scraped/forked copy hammering the shared Gemini key.
+export const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaEnterpriseProvider(RECAPTCHA_SITE_KEY),
+  isTokenAutoRefreshEnabled: true,
+})
+
 export const auth = getAuth(app)
 export const db = getFirestore(app)
 export const googleProvider = new GoogleAuthProvider()

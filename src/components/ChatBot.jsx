@@ -3,10 +3,12 @@ import { signInWithPopup, signOut } from 'firebase/auth'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import { auth, googleProvider } from '../firebase'
+import { getToken } from 'firebase/app-check'
+import { auth, appCheck, googleProvider } from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../firebase'
 import { useAuth } from '../lib/useAuth'
+import { RESEARCH_CONTEXT } from '../data/educationData.js'
 import './ChatBot.css'
 
 const CHAT_FUNCTION_URL =
@@ -92,6 +94,7 @@ export default function ChatBot() {
 
     try {
       const token = await user.getIdToken()
+      const appCheckToken = await getToken(appCheck)
       // One doc per sign-in session — stable for the lifetime of this login,
       // shared by every message so the chat function can append to one row.
       const sessionId = user.metadata.lastSignInTime
@@ -100,8 +103,9 @@ export default function ChatBot() {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
+          'X-Firebase-AppCheck': appCheckToken.token,
         },
-        body: JSON.stringify({ messages: history, sessionId, pageText: pageText() }),
+        body: JSON.stringify({ messages: history, sessionId, pageText: `${RESEARCH_CONTEXT}\n${pageText()}` }),
       })
 
       if (res.status === 423) {

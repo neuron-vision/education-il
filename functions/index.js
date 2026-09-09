@@ -96,7 +96,7 @@ async function createLock(uid, reason, now = new Date()) {
 }
 
 export const chat = onRequest(
-  { cors: true, secrets: [GEMINI_KEY], region: 'us-central1' },
+  { cors: true, secrets: [GEMINI_KEY], region: 'us-central1', enforceAppCheck: true },
   async (req, res) => {
     if (req.method !== 'POST') {
       res.status(405).json({ error: 'Method not allowed' })
