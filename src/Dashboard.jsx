@@ -337,36 +337,31 @@ function ResearchFindingsSection() {
   )
 }
 
-export default function Dashboard() {
+export {
+  PisaSection,
+  TimssSection,
+  MeitzavSection,
+  ExpenditureSection,
+  MoneyVsAchievementSection,
+  ResearchFindingsSection,
+}
+
+export function DashboardHeader() {
   return (
-    <div className="dash-root">
-      <div className="dash-wrap">
-        <header className="dash-header">
-          <div className="dash-kicker">חינוך · דשבורד נתונים · מעודכן 9.9.2026</div>
-          <h1 className="dash-title">חינוך בישראל לאורך זמן — ומול העולם</h1>
-          <p className="dash-sub">
-            מבט נתוני על מגמות ההישגים במערכת החינוך הישראלית: PISA, TIMSS, מיצ״ב, והוצאה לחינוך —
-            בהשוואה לממוצעי ה-OECD ולעולם.
-          </p>
-          <nav className="dash-nav">
-            <a href="#pisa">PISA</a>
-            <a href="#timss">TIMSS</a>
-            <a href="#meitzav">מיצ״ב</a>
-            <a href="#expenditure">הוצאה לחינוך</a>
-            <a href="#money">כסף מול הישגים</a>
-            <a href="#causes">גורמים לירידה</a>
-          </nav>
-        </header>
+    <header className="dash-header">
+      <div className="dash-kicker">חינוך · דשבורד נתונים · מעודכן 9.9.2026</div>
+      <h1 className="dash-title">חינוך בישראל לאורך זמן — ומול העולם</h1>
+      <p className="dash-sub">
+        מבט נתוני על מגמות ההישגים במערכת החינוך הישראלית: PISA, TIMSS, מיצ״ב, והוצאה לחינוך —
+        בהשוואה לממוצעי ה-OECD ולעולם.
+      </p>
+    </header>
+  )
+}
 
-        <PisaSection />
-        <TimssSection />
-        <MeitzavSection />
-        <ExpenditureSection />
-        <MoneyVsAchievementSection />
-        <ResearchFindingsSection />
-        <CausesSection />
-
-        <footer className="dash-footer">
+export function DashboardFooter() {
+  return (
+    <footer className="dash-footer">
           מקורות מלאים בקובץ <code>sources.md</code>. חלק מהנתונים ההיסטוריים (במיוחד ממוצעי OECD לשנים
           שלפני 2022 ו-TIMSS 2007–2015) לא אומתו ישירות מול מקור רשמי ומסומנים בהתאם. לשימוש אקדמי, יש
           לאמת מול{' '}
@@ -384,6 +379,24 @@ export default function Dashboard() {
             Neuron Vision LTD
           </a>
         </footer>
+  )
+}
+
+export default function Dashboard() {
+  return (
+    <div className="dash-root">
+      <div className="dash-wrap">
+        <DashboardHeader />
+
+        <PisaSection />
+        <TimssSection />
+        <MeitzavSection />
+        <ExpenditureSection />
+        <MoneyVsAchievementSection />
+        <ResearchFindingsSection />
+        <CausesSection />
+
+        <DashboardFooter />
       </div>
     </div>
   )

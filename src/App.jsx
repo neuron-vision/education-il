@@ -1,13 +1,47 @@
-import Dashboard from './Dashboard.jsx'
+import {
+  DashboardHeader,
+  DashboardFooter,
+  PisaSection,
+  TimssSection,
+  MeitzavSection,
+  ExpenditureSection,
+  MoneyVsAchievementSection,
+  ResearchFindingsSection,
+} from './Dashboard.jsx'
+import CausesSection from './CausesSection.jsx'
+import TrendsPage from './TrendsPage.jsx'
 import ChatBot from './components/ChatBot.jsx'
 import Admin from './Admin.jsx'
 import AccessibilityStatement from './AccessibilityStatement.jsx'
 import AccessibilityWidget from './components/AccessibilityWidget.jsx'
 import CookieConsent from './components/CookieConsent.jsx'
-import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { signOut } from 'firebase/auth'
 import { auth } from './firebase'
 import { useAuth } from './lib/useAuth'
+import './dashboard.css'
+
+const SECTION_LINKS = [
+  { to: '/pisa', label: 'PISA' },
+  { to: '/timss', label: 'TIMSS' },
+  { to: '/meitzav', label: 'מיצ״ב' },
+  { to: '/expenditure', label: 'הוצאה לחינוך' },
+  { to: '/money', label: 'כסף מול הישגים' },
+  { to: '/causes', label: 'גורמים לירידה' },
+  { to: '/trends', label: 'מגמות' },
+]
+
+function DashboardPage({ children }) {
+  return (
+    <div className="dash-root">
+      <div className="dash-wrap">
+        <DashboardHeader />
+        {children}
+        <DashboardFooter />
+      </div>
+    </div>
+  )
+}
 
 // Signed-out (and still-loading) users are bounced to the דשבורד — /admin
 // has nothing to show them anyway, so skip the "no permission" flash.
@@ -20,8 +54,14 @@ function RequireAuth({ children }) {
 
 function NavBar() {
   const user = useAuth()
+  const location = useLocation()
   return <nav className="app-nav" dir="rtl">
-    <Link to="/">דשבורד</Link>
+    <Link to="/" className={location.pathname === '/' ? 'active' : ''}>דשבורד</Link>
+    {SECTION_LINKS.map((link) => (
+      <Link key={link.to} to={link.to} className={location.pathname === link.to ? 'active' : ''}>
+        {link.label}
+      </Link>
+    ))}
     {user?.isAdmin && <Link to="/admin">ניהול</Link>}
     {user && (
       <span className="app-nav-user">
@@ -41,10 +81,17 @@ function App() {
     <NavBar />
     <main id="main-content" tabIndex={-1}>
       <Routes>
-        <Route path="/" element={<><Dashboard /><ChatBot /></>} />
+        <Route path="/" element={<><Navigate to="/pisa" replace /><ChatBot /></>} />
+        <Route path="/pisa" element={<><DashboardPage><PisaSection /></DashboardPage><ChatBot /></>} />
+        <Route path="/timss" element={<><DashboardPage><TimssSection /></DashboardPage><ChatBot /></>} />
+        <Route path="/meitzav" element={<><DashboardPage><MeitzavSection /></DashboardPage><ChatBot /></>} />
+        <Route path="/expenditure" element={<><DashboardPage><ExpenditureSection /><ResearchFindingsSection /></DashboardPage><ChatBot /></>} />
+        <Route path="/money" element={<><DashboardPage><MoneyVsAchievementSection /></DashboardPage><ChatBot /></>} />
+        <Route path="/causes" element={<><DashboardPage><CausesSection /></DashboardPage><ChatBot /></>} />
+        <Route path="/trends" element={<><TrendsPage /><ChatBot /></>} />
         <Route path="/admin" element={<RequireAuth><Admin /></RequireAuth>} />
         <Route path="/נגישות" element={<AccessibilityStatement />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/pisa" replace />} />
       </Routes>
     </main>
     <AccessibilityWidget />

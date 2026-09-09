@@ -1,0 +1,58 @@
+.trends-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.trends-control-group {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.trends-control-label {
+  font-size: 12px;
+  color: var(--text-dim, #9ca3af);
+  white-space: nowrap;
+}
+
+.trends-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.trends-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 16px;
+  border: 1px solid #2a2f3a;
+  background: #171a21;
+  color: #6b7280;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.15s, border-color 0.15s, color 0.15s;
+  opacity: 0.6;
+}
+
+.trends-chip.active {
+  opacity: 1;
+  background: #1a1e27;
+}
+
+.trends-chip i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.timeline-chart-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}

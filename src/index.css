@@ -63,6 +63,7 @@ body {
   .app-nav-user { width: 100%; justify-content: flex-end; margin-inline-start: 0; order: 3; }
 }
 .app-nav a { color: #d9dee7; text-decoration: none; padding: 5px 12px; border-radius: 16px; background: #20242d; font-size: 13px; }
+.app-nav a.active { background: #3d7ea6; color: #fff; }
 .app-nav-user { margin-inline-start: auto; display: flex; align-items: center; gap: 8px; color: #9ca3af; font-size: 12px; }
 .app-nav-badge {
   display: inline-block;
