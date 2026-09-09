@@ -1,10 +1,11 @@
 import { onRequest } from 'firebase-functions/v2/https'
 import { defineSecret } from 'firebase-functions/params'
 import { initializeApp } from 'firebase-admin/app'
+import { getAppCheck } from 'firebase-admin/app-check'
 import { getAuth } from 'firebase-admin/auth'
 import { getFirestore, FieldValue } from 'firebase-admin/firestore'
 import { GoogleGenerativeAI } from '@google/generative-ai'
-import { DAILY_CHAT_LIMIT, hackingDetected, MAX_MESSAGE_CHARS, quotaDecision, validateMessage } from './chatPolicy.js'
+import { DAILY_CHAT_LIMIT, hackingDetected, MAX_MESSAGE_CHARS, quotaDecision, requestGateDecision, validateMessage } from './chatPolicy.js'
 
 initializeApp()
 
@@ -44,6 +45,20 @@ async function requireUser(req) {
     return await getAuth().verifyIdToken(match[1])
   } catch {
     return null
+  }
+}
+
+// onRequest (unlike onCall) does not implement the `enforceAppCheck` option —
+// it must be checked by hand, or a caller with a valid Auth account but no
+// App Check token (e.g. a scripted/forked frontend) sails straight through.
+async function verifyAppCheck(req) {
+  const token = req.get('X-Firebase-AppCheck')
+  if (!token) return false
+  try {
+    await getAppCheck().verifyToken(token)
+    return true
+  } catch {
+    return false
   }
 }
 
@@ -96,16 +111,13 @@ async function createLock(uid, reason, now = new Date()) {
 }
 
 export const chat = onRequest(
-  { cors: true, secrets: [GEMINI_KEY], region: 'us-central1', enforceAppCheck: true },
+  { cors: true, secrets: [GEMINI_KEY], region: 'us-central1' },
   async (req, res) => {
-    if (req.method !== 'POST') {
-      res.status(405).json({ error: 'Method not allowed' })
-      return
-    }
-
-    const decoded = await requireUser(req)
-    if (!decoded) {
-      res.status(401).json({ error: 'Sign-in required' })
+    const hasAppCheck = req.method === 'POST' && (await verifyAppCheck(req))
+    const decoded = hasAppCheck ? await requireUser(req) : null
+    const gate = requestGateDecision({ method: req.method, hasAppCheck, hasAuth: !!decoded })
+    if (!gate.allowed) {
+      res.status(gate.status).json({ error: gate.error })
       return
     }
     // Any verified Firebase account may use the function. The web UI currently

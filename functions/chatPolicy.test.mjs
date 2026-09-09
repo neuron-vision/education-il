@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { DAILY_CHAT_LIMIT, MAX_MESSAGE_CHARS, hackingDetected, quotaDecision, validateMessage } from './chatPolicy.js'
+import { DAILY_CHAT_LIMIT, MAX_MESSAGE_CHARS, hackingDetected, quotaDecision, requestGateDecision, validateMessage } from './chatPolicy.js'
 
 test('policy constants are restrictive', () => {
   assert.equal(DAILY_CHAT_LIMIT, 10)
@@ -42,4 +42,48 @@ test('quota normalizes malformed counters safely', () => {
   assert.deepEqual(quotaDecision(undefined), { allowed: true, used: 0 })
   assert.deepEqual(quotaDecision(-4), { allowed: true, used: 0 })
   assert.deepEqual(quotaDecision('10'), { allowed: false, used: 10 })
+})
+
+// requestGateDecision({ method, hasAppCheck, hasAuth }) is the single source of truth
+// for whether a request even reaches Firestore/Gemini. It exists because onRequest
+// (unlike onCall) does not implement Firebase's enforceAppCheck option — that flag
+// is silently a no-op on HTTPS request functions, so App Check must be checked by
+// hand, in code that is exercised by a test, or it regresses silently again.
+test('rejects non-POST methods before any auth checks', () => {
+  const decision = requestGateDecision({ method: 'GET', hasAppCheck: true, hasAuth: true })
+  assert.equal(decision.allowed, false)
+  assert.equal(decision.status, 405)
+})
+
+test('rejects requests with no App Check token even when otherwise authenticated', () => {
+  const decision = requestGateDecision({ method: 'POST', hasAppCheck: false, hasAuth: true })
+  assert.equal(decision.allowed, false)
+  assert.equal(decision.status, 401)
+  assert.equal(decision.error, 'App Check required')
+})
+
+test('rejects requests where App Check verification failed', () => {
+  // hasAppCheck is the caller's already-verified boolean (see verifyAppCheck in
+  // index.js) — an invalid/expired token must resolve to false before this is called.
+  const decision = requestGateDecision({ method: 'POST', hasAppCheck: false, hasAuth: true })
+  assert.equal(decision.allowed, false)
+  assert.equal(decision.status, 401)
+  assert.equal(decision.error, 'App Check required')
+})
+
+test('checks App Check before Firebase Auth, so an App-Check-only bypass is caught first', () => {
+  const decision = requestGateDecision({ method: 'POST', hasAppCheck: false, hasAuth: false })
+  assert.equal(decision.error, 'App Check required')
+})
+
+test('rejects requests with a valid App Check token but no signed-in user', () => {
+  const decision = requestGateDecision({ method: 'POST', hasAppCheck: true, hasAuth: false })
+  assert.equal(decision.allowed, false)
+  assert.equal(decision.status, 401)
+  assert.equal(decision.error, 'Sign-in required')
+})
+
+test('allows a POST with both a valid App Check token and a signed-in user', () => {
+  const decision = requestGateDecision({ method: 'POST', hasAppCheck: true, hasAuth: true })
+  assert.deepEqual(decision, { allowed: true })
 })

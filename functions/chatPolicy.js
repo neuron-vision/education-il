@@ -25,3 +25,16 @@ export function quotaDecision(used) {
   const count = Math.max(0, Number(used) || 0)
   return { allowed: count < DAILY_CHAT_LIMIT, used: count }
 }
+
+// Single source of truth for whether a request reaches Firestore/Gemini at all.
+// onRequest (unlike onCall) does not implement Firebase's `enforceAppCheck` option —
+// that flag is a silent no-op on HTTPS request functions, so this check must be
+// performed by hand. Order matters: App Check (proves the call comes from our own
+// registered app) is checked before Firebase Auth (proves a signed-in user), so a
+// scripted caller with a stolen/created account still can't get past the app gate.
+export function requestGateDecision({ method, hasAppCheck, hasAuth }) {
+  if (method !== 'POST') return { allowed: false, status: 405, error: 'Method not allowed' }
+  if (!hasAppCheck) return { allowed: false, status: 401, error: 'App Check required' }
+  if (!hasAuth) return { allowed: false, status: 401, error: 'Sign-in required' }
+  return { allowed: true }
+}
