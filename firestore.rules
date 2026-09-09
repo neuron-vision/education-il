@@ -22,6 +22,12 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    match /users/{userId}/locks/{lockId} {
+      allow read: if request.auth != null &&
+        (request.auth.uid == userId || request.auth.token.admin == true);
+      allow write: if false;
+    }
+
     // No other client-facing collections yet — deny everything by default.
     match /{document=**} {
       allow read, write: if false;

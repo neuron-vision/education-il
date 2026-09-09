@@ -26,6 +26,7 @@
     {
       "source": "functions",
       "codebase": "default",
+      "runtime": "nodejs22",
       "ignore": [
         "node_modules",
         ".git",
@@ -36,5 +37,18 @@
   ],
   "firestore": {
     "rules": "firestore.rules"
+  },
+  "emulators": {
+    "functions": {
+      "port": 15501
+    },
+    "hosting": {
+      "port": 15504
+    },
+    "ui": {
+      "enabled": true,
+      "port": 15505
+    },
+    "singleProjectMode": true
   }
 }

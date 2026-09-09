@@ -4,14 +4,20 @@ import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { auth, googleProvider } from '../firebase'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase'
 import { useAuth } from '../lib/useAuth'
 import './ChatBot.css'
 
-const CHAT_FUNCTION_URL = 'https://us-central1-education-il.cloudfunctions.net/chat'
+const CHAT_FUNCTION_URL =
+  import.meta.env.VITE_USE_EMULATORS === 'true'
+    ? 'http://127.0.0.1:15501/education-il/us-central1/chat'
+    : 'https://us-central1-education-il.cloudfunctions.net/chat'
 
 // gemini-flash-latest pricing per 1M tokens (USD) — update if the model in functions/index.js changes.
 const PRICE_PER_M_INPUT = 0.075
 const PRICE_PER_M_OUTPUT = 0.30
+const MAX_MESSAGE_CHARS = 2000
 
 function pageText() {
   return document.body.innerText.replace(/\s+/g, ' ').trim()
@@ -25,11 +31,47 @@ export default function ChatBot() {
   const [input, setInput] = useState('')
   const [busy, setBusy] = useState(false)
   const [usage, setUsage] = useState({ inputTokens: 0, outputTokens: 0 })
+  const [lock, setLock] = useState(null)
+  const [clock, setClock] = useState(Date.now())
   const scrollRef = useRef(null)
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight })
   }, [messages, open])
+
+  useEffect(() => {
+    if (!user) { setLock(null); return undefined }
+    let cancelled = false
+    async function loadLock() {
+      const snapshot = await getDocs(collection(db, 'users', user.uid, 'locks'))
+      const active = snapshot.docs.map((item) => item.data()).map((data) => ({
+        ...data,
+        releaseAt: data.releaseAt?.toDate?.() || new Date(data.releaseAt),
+      })).filter((item) => item.releaseAt > new Date()).sort((a, b) => b.releaseAt - a.releaseAt)[0]
+      if (!cancelled && active) setLock(active)
+    }
+    loadLock().catch(() => {})
+    return () => { cancelled = true }
+  }, [user])
+
+  useEffect(() => {
+    if (!lock) return undefined
+    const timer = setInterval(() => {
+      setClock(Date.now())
+      if (lock.releaseAt <= new Date()) setLock(null)
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [lock])
+
+  function countdown() {
+    if (!lock) return ''
+    const seconds = Math.max(0, Math.ceil((lock.releaseAt - clock) / 1000))
+    const days = Math.floor(seconds / 86400)
+    const hours = Math.floor((seconds % 86400) / 3600)
+    const minutes = Math.floor((seconds % 3600) / 60)
+    const secs = seconds % 60
+    return `${days} ימים ${hours} שעות ${minutes} דקות ${secs} שניות`
+  }
 
   async function signIn() {
     try {
@@ -41,7 +83,7 @@ export default function ChatBot() {
 
   async function send(overrideText) {
     const text = (overrideText ?? input).trim()
-    if (!text || busy || !user) return
+    if (!text || busy || !user || lock || text.length > MAX_MESSAGE_CHARS) return
     setInput('')
     setBusy(true)
 
@@ -62,6 +104,12 @@ export default function ChatBot() {
         body: JSON.stringify({ messages: history, sessionId, pageText: pageText() }),
       })
 
+      if (res.status === 423) {
+        const yaml = await res.text()
+        const release = yaml.match(/release_at:\s*"([^"]+)"/)?.[1]
+        setLock({ releaseAt: release ? new Date(release) : new Date(Date.now() + 3 * 86400000), reason: yaml })
+        throw new Error('הצ׳אט ננעל. ניתן לראות את הספירה לאחור בחלון הצ׳אט.')
+      }
       if (!res.ok || !res.body) {
         const err = await res.json().catch(() => ({}))
         throw new Error(err.error || `שגיאת שרת (${res.status})`)
@@ -147,6 +195,7 @@ export default function ChatBot() {
             </div>
           ) : (
             <>
+              {lock && <div className="cb-lock" role="alert">הצ׳אט נעול.<br />שחרור בעוד: {countdown()}</div>}
               <div className="cb-messages" ref={scrollRef}>
                 {messages.length === 0 && (
                   <div className="cb-suggestions">
@@ -163,9 +212,14 @@ export default function ChatBot() {
                   </div>
                 ))}
               </div>
-              <div className="cb-input-row">
+              {!lock && <div className="cb-input-row">
                 <textarea
                   value={input}
+                  maxLength={MAX_MESSAGE_CHARS}
+                  onPaste={(e) => {
+                    const pasted = e.clipboardData.getData('text')
+                    if (pasted.length > MAX_MESSAGE_CHARS) e.preventDefault()
+                  }}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
@@ -176,8 +230,9 @@ export default function ChatBot() {
                   placeholder="שאל שאלה..."
                   disabled={busy}
                 />
+                <span className="cb-char-count">{input.length}/{MAX_MESSAGE_CHARS}</span>
                 <button type="button" onClick={() => send()} disabled={busy || !input.trim()}>שלח</button>
-              </div>
+              </div>}
               <button type="button" className="cb-signout" onClick={() => signOut(auth)}>
                 התנתק ({user.displayName}
                 {user.isAdmin && <span className="cb-admin-badge">מנהל</span>})

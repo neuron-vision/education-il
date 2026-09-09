@@ -4,7 +4,10 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
+    "test": "node --test functions/chatPolicy.test.mjs",
+    "test:cloud": "node scripts/test-chat-cloud.mjs",
     "dev": "vite",
+    "start": "node scripts/dev.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "generate:assets": "node scripts/generate-assets.js",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "playwright": "^1.63.0",
     "sharp": "^0.33.5",
     "vite": "^5.4.11"
   },

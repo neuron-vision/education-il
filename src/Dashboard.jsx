@@ -353,6 +353,11 @@ export default function Dashboard() {
             IEA TIMSS
           </a>
           .
+          <br />
+          Made by{' '}
+          <a href="https://neuron.vision" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>
+            Neuron Vision LTD
+          </a>
         </footer>
       </div>
     </div>

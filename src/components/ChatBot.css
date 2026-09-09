@@ -29,6 +29,7 @@
 .cb-msg-assistant { align-self: flex-start; background: var(--surface-alt); border: 1px solid var(--rule); border-bottom-right-radius: 3px; }
 .cb-input-row { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--rule); }
 .cb-input-row textarea { flex: 1; resize: none; height: 38px; background: var(--bg); color: var(--text); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; font-family: inherit; font-size: 13px; }
+.cb-char-count { align-self: flex-end; color: var(--text-dim); font-size: 10px; white-space: nowrap; }
 .cb-input-row button { background: #3d7ea6; color: #fff; border: none; border-radius: 8px; padding: 0 16px; cursor: pointer; font-size: 13px; }
 .cb-input-row button:disabled { opacity: .5; cursor: default; }
 .cb-suggestions { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 0 6px; }
@@ -39,6 +40,7 @@
 .cb-signout { background: none; border: none; border-top: 1px solid var(--rule); color: var(--text-dim); font-size: 11px; padding: 6px; cursor: pointer; }
 .cb-signout:hover { color: var(--text); }
 .cb-usage { padding: 4px 12px; font-size: 10px; color: var(--text-dim); background: var(--surface-alt); border-bottom: 1px solid var(--rule); text-align: center; direction: ltr; }
+.cb-lock { margin: 10px 12px 0; padding: 10px; border: 1px solid #b54b4b; border-radius: 8px; background: rgba(181, 75, 75, .12); color: var(--text); font-size: 12px; text-align: center; }
 .cb-admin-badge {
   display: inline-block;
   margin-inline-start: 5px;

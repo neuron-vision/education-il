@@ -9,6 +9,9 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
+.emulator-data/
+ui-debug.log
+firestore-debug.log
 
 # Firebase config
 
