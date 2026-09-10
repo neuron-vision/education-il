@@ -1,9 +1,11 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import SourceList from './components/SourceList.jsx'
 import { CAUSES } from './data/causesData.js'
 
 function CauseCard({ cause }) {
   return (
-    <div className="dash-card cause-card">
+    <div className="dash-card cause-card" id={cause.id}>
       <div className="cause-q">{cause.q}</div>
 
       <div className="cause-stats">
@@ -27,6 +29,14 @@ function CauseCard({ cause }) {
 }
 
 export default function CausesSection() {
+  const { hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) return
+    const el = document.getElementById(hash.slice(1))
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [hash])
+
   return (
     <section className="dash-section" id="causes">
       <div className="dash-section-head">

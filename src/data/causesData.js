@@ -157,4 +157,21 @@ export const CAUSES = [
       { label: 'OECD Education GPS — פרופיל ישראל', url: 'https://gpseducation.oecd.org/CountryProfile?primaryCountry=ISR&treshold=10&topic=PI' },
     ],
   },
+  {
+    id: 'privatization',
+    q: 'האם הפרטה/תחרות בין בתי ספר תפתור את הירידה, בלי לפגוע בשוויון ההזדמנויות?',
+    stat: '26%',
+    statLabel: 'פער בתקציב שנתי לתלמיד: ממ״ד לעומת ממלכתי בישראל (גדל מ-18% בעשור)',
+    compare: '8/37',
+    compareLabel: 'מדינות OECD עם רמת הפרדה חברתית-אקדמית גבוהה בין בתי ספר (PISA 2022)',
+    answer:
+      'העדות הבינלאומית על הפרטה/שוברים מעורבת עד שלילית מבחינת שוויון, ולא חד-משמעית מבחינת הישגים. במקרה הנחקר ביותר — שוברי החינוך בצ׳ילה (מאז 1981) — לא נמצא שיפור עקבי בהישגים, והקשר בין רקע סוציו-אקונומי לציונים חזק יותר במגזר הפרטי-בשובר מאשר בציבורי, כלומר מיון חברתי ולא דחיפה למצוינות. גם ב"בתי הספר החופשיים" בשוודיה נרשמה ירידה בציוני PISA לצד עלייה בהפרדה החברתית. דו״ח ה-OECD "Balancing School Choice and Equity" מוצא שתחרות לא-מוסדרת נוטה להגביר הפרדה, אלא אם מלווה ברגולציה על קבלה ומימון מאוזן. בישראל עצמה קיים כבר פער תקציבי גדל בין זרמי החינוך, ומחקרים מראים שבתי ספר מעורבים סוציו-אקונומית משיגים תוצאות טובות יותר מבתי ספר מופרדים.',
+    verdict: 'לא נתמך — תחרות לא-מוסדרת קשורה יותר להפרדה מאשר למצוינות',
+    verdictColor: 'midlow',
+    sources: [
+      { label: 'OECD — Balancing School Choice and Equity', url: 'https://www.oecd.org/en/publications/balancing-school-choice-and-equity_2592c974-en.html' },
+      { label: 'Calcalist — פער תקציבי בין זרמי החינוך', url: 'https://www.calcalist.co.il/magazine/article/g1cdzzk0c' },
+      { label: 'Hsieh & Urquiola — מחקר שוברי החינוך בצ׳ילה', url: 'https://www.sciencedirect.com/science/article/abs/pii/S0738059310001367' },
+    ],
+  },
 ]
