@@ -12,6 +12,7 @@ import CausesSection from './CausesSection.jsx'
 import TrendsPage from './TrendsPage.jsx'
 import ClassSizePage from './ClassSizePage.jsx'
 import TeacherSalaryPage from './TeacherSalaryPage.jsx'
+import SocialFactorsPage from './SocialFactorsPage.jsx'
 import ChatBot from './components/ChatBot.jsx'
 import Admin from './Admin.jsx'
 import AccessibilityStatement from './AccessibilityStatement.jsx'
@@ -34,6 +35,7 @@ const SECTION_LINKS = [
   { to: '/causes', label: 'גורמים לירידה' },
   { to: '/class-size', label: 'צפיפות כיתות' },
   { to: '/teacher-salary', label: 'שכר מורים' },
+  { to: '/social-factors', label: 'בידוד ורשתות חברתיות' },
   { to: '/trends', label: 'מגמות' },
 ]
 
@@ -115,6 +117,7 @@ function AppRoutes() {
       <Route path="/causes" element={<><DashboardPage><CausesSection /></DashboardPage><ChatBot /></>} />
       <Route path="/class-size" element={<><ClassSizePage /><ChatBot /></>} />
       <Route path="/teacher-salary" element={<><TeacherSalaryPage /><ChatBot /></>} />
+      <Route path="/social-factors" element={<><SocialFactorsPage /><ChatBot /></>} />
       <Route path="/trends" element={<><TrendsPage /><ChatBot /></>} />
       <Route path="/admin" element={<RequireAuth><Admin /></RequireAuth>} />
       <Route path="/נגישות" element={<AccessibilityStatement />} />
