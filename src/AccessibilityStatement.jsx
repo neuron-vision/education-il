@@ -52,7 +52,7 @@ export default function AccessibilityStatement() {
             נתקלתם בבעיית נגישות באתר? נשמח לקבל פנייתכם ולטפל בה בהקדם.
           </p>
           <ul className="bullets">
-            <li>רכז נגישות: ishay@magicmirrorsecurity.com</li>
+            <li>רכז נגישות: ishay@neuron.vision</li>
             <li>תאריך עדכון הצהרה זו: 09.09.2026</li>
           </ul>
         </section>
